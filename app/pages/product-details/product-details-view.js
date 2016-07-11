@@ -276,6 +276,9 @@ function($, BaseView, template, Utils, JSONTemplate, Breadcrumb, ProductDetailPa
             },
             pdpContent: function() {
                 return $('#pdetails_suggestions');
+            },
+            abc: function() {
+                return 'aa';
             }
         }
 
