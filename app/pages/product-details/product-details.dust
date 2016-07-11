@@ -8,11 +8,19 @@
         <div>{productId}</div>
 
         <div>{WriteReviewLink}</div>
-
-        {pdpContent}
         {>"global/includes/pdp-sections/product-information-and-actions" /}
 
         {>"global/includes/pdp-sections/related-product-section" /}
+
+        {#steps}
+            {form|openTag|s}
+                {hiddenfields}
+                {#swatchesContainer}
+                    {label}
+                    {swatches}
+                {/swatchesContainer}
+            {form|closeTag|s}
+        {/steps}
     </div>
 
     <div class="js-desktop-pdp u-visually-hidden" aria-hidden="true" tabindex="-1">

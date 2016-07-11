@@ -89,6 +89,16 @@ function($, BaseView, template, Utils, JSONTemplate, Breadcrumb, ProductDetailPa
             $('<iframe src="//youtube.com/embed/' + videoID[1] + '"></iframe>') : $();
     };
 
+    var getProductSwatches = function($container) {
+        return $container.find('.prod_select_con').map(function(_, item) {
+            var $item = $(item);
+            return {
+                label: 'aaa',
+                swatches: $item.find('.prodSelectRefCon')
+            };
+        });
+    };
+
 
 
     return {
@@ -279,6 +289,14 @@ function($, BaseView, template, Utils, JSONTemplate, Breadcrumb, ProductDetailPa
             },
             abc: function() {
                 return 'aa';
+            },
+            steps: function() {
+                var $productDetailForm = $('#addToCartForm');
+                return {
+                    form: $productDetailForm,
+                    hiddenfields: $productDetailForm.find('[type="hidden"]'),
+                    swatchesContainer: getProductSwatches($productDetailForm)
+                };
             }
         }
 
