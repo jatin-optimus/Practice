@@ -7,10 +7,6 @@
 
         <div>{productId}</div>
 
-        <div>{WriteReviewLink}</div>
-        {>"global/includes/pdp-sections/product-information-and-actions" /}
-
-        {>"global/includes/pdp-sections/related-product-section" /}
 
         {#steps}
             {form|openTag|s}
@@ -23,41 +19,6 @@
         {/steps}
     </div>
 
-    <div class="js-desktop-pdp u-visually-hidden" aria-hidden="true" tabindex="-1">
-        {#hiddenData}
-            {.container}
-
-            {.pdp}
-        {/hiddenData}
-    </div>
-
-    {abc}
-
-    {>"components/sheet/sheet" effect="sheetBottom" class="js-taf-pinny" bodyContent=tellAFriendContainer  isHeader="true"/}
-
-    {>"components/sheet/sheet" effect="sheetBottom" class="js-more-information-pinny" bodyContent=moreInformationContainer  isHeader="true"/}
-
-    {>"components/sheet/sheet" effect="sheetBottom" cssClass="t-size-chart-pinny" class="js-size-chart-pinny" bodyClass="js-size-chart-body" /}
-
-    {>"components/sheet/sheet" effect="sheetBottom" cssClass="t-personalization-pinny" class="js-personalization-pinny" bodyContent=personalizationContainer coverage="100%" isHeader="true" /}
-
-    {>"components/sheet/sheet" effect="modalCenter"  cssClass="c--dialog" class="js-wishlist-pinny" bodyClass="js-wishlist-pinny__body" isHeader="true"/}
-
-    {>"components/sheet/sheet" effect="modalCenter"  cssClass="c--dialog" class="js-sign-in-pinny" bodyClass="js-sign-in-pinny__body c-sign-in-pinny__body"  isHeader="true"/}
-
-    {>"components/sheet/sheet" effect="modalCenter"  cssClass="c--dialog" class="js-delete-personalization-pinny" bodyClass="js-delete-personalization-pinny__body c-delete-personalization-pinny__body"  isHeader="true"/}
-
-    {>"components/sheet/sheet" effect="modalCenter"  cssClass="c--dialog" class="js-registry-confirmation-pinny" bodyClass="js-registry-confirmation-pinny__body c-registry-confirmation-pinny__body"  isHeader="true"/}
-
-    {>"components/sheet/sheet" effect="sheetBottom" class="js-ask-a-specialist-pinny c-ask-a-specialist-pinny" bodyClass="js-ask-a-specialist-pinny__body" coverage="100%"  isHeader="true"/}
-
-    {>"components/sheet/sheet" effect="sheetBottom" class="js-interactive-image-pinny" bodyClass="js-interactive-image-pinny__body" coverage="100%"  isHeader="true"/}
-
-    {>"components/sheet/sheet" effect="sheetBottom" class="js-product-review-pinny" headerClass="u-border-bottom-light-grey" bodyClass="js-product-review-pinny__body" coverage="100%"  isHeader="true"/}
-
-    {>"components/sheet/sheet" effect="sheetBottom" class="js-product-question-pinny" headerClass="u-border-bottom-light-grey" bodyClass="js-product-question-pinny__body" coverage="100%"  isHeader="true"/}
-
-    {>"components/back-to-top/back-to-top" class="c--sticky" icon="top" /}
 {/contentBlock}
 
 {<uiScripts}
