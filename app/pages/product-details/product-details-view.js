@@ -8,8 +8,8 @@ function($, BaseView, template) {
         return $container.find('.prod_select_con').map(function(_, item) {
             var $item = $(item);
             return {
-                label: 'aaa',
-                swatches: $item.find('.prodSelectRefCon')
+                // hidden: $item.find('.prodSelectRefCon2'),
+                swatches: $item
             };
         });
     };
@@ -27,12 +27,24 @@ function($, BaseView, template) {
                 return $('.prod_itemid').text();
             },
             steps: function() {
-                var $productDetailForm = $('#addToCartForm');
+                // return $('.prodRightCon');
+                var $form = $('#addToCartForm');
                 return {
-                    form: $productDetailForm,
-                    hiddenfields: $productDetailForm.find('[type="hidden"]'),
-                    swatchesContainer: getProductSwatches($productDetailForm)
+                    form: $form,
+                    hiddenData: $form.find('#addToCartAttributes'),
+                    swatchesContainer: getProductSwatches($form),
+                    selectTag: $('#productSelectTag'),
+                    addToCart: $('.addToCartCon')
                 };
+            },
+            hiddenContainer: function() {
+                return $('.prodOverview1, .prodOverview2');
+            },
+            imageSection: function() {
+                return $('#productDisplaySkuImage').parent();
+            },
+            price: function() {
+                return $('#ref2QIPriceTitleS');
             }
         }
 

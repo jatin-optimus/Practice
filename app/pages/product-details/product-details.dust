@@ -7,16 +7,29 @@
 
         <div>{productId}</div>
 
+        <div id="content" class="container_nh">
+            <div class="u-visually-hidden">{hiddenContainer}</div>
+            {imageSection}
 
-        {#steps}
-            {form|openTag|s}
-                {hiddenfields}
-                {#swatchesContainer}
-                    {label}
-                    {swatches}
-                {/swatchesContainer}
-            {form|closeTag|s}
-        {/steps}
+            <div class="c-price">
+                {price}
+            </div>
+
+            {#steps}
+                {form|openTag|s}
+                    {hiddenData}
+                    <div id="product_select_container" class="prodSelectCon">
+                        {#swatchesContainer}
+                            {label}
+                            {swatches}
+                        {/swatchesContainer}
+                        {selectTag}
+                        {addToCart}
+                    </div>
+                {form|closeTag|s}
+            {/steps}
+        </div>
+
     </div>
 
 {/contentBlock}
