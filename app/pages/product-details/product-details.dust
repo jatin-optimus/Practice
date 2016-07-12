@@ -7,12 +7,21 @@
 
         <div>{productId}</div>
 
+        {#steps}
+            {form|openTag|s}
+                {hiddenfields}
+                {#swatchesContainer}
+                    {label}
+                    {swatches}
+                {/swatchesContainer}
+            {form|closeTag|s}
+        {/steps}
+
         {#productDescriptionTabs}
             {>"components/bellows/bellows":.bellows/}
         {/productDescriptionTabs}
 
         {>"components/scooch/scooch"/}
-
     </div>
 
 {/contentBlock}

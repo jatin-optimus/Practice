@@ -2,9 +2,17 @@ define([
     '$',
     'global/baseView',
     'dust!pages/product-details/product-details'
-
 ],
 function($, BaseView, template) {
+    var getProductSwatches = function($container) {
+        return $container.find('.prod_select_con').map(function(_, item) {
+            var $item = $(item);
+            return {
+                label: 'aaa',
+                swatches: $item.find('.prodSelectRefCon')
+            };
+        });
+    };
 
     var getProductDescriptonTabs = function() {
         var _items = [];
@@ -50,6 +58,14 @@ function($, BaseView, template) {
             },
             productDescriptionTabs: function() {
                 return getProductDescriptonTabs();
+            },
+            steps: function() {
+                var $productDetailForm = $('#addToCartForm');
+                return {
+                    form: $productDetailForm,
+                    hiddenfields: $productDetailForm.find('[type="hidden"]'),
+                    swatchesContainer: getProductSwatches($productDetailForm)
+                };
             }
         }
 
