@@ -30,6 +30,9 @@
             {/steps}
         </div>
 
+        {#productDescriptionTabs}
+            {>"components/bellows/bellows":.bellows/}
+        {/productDescriptionTabs}
     </div>
 
 {/contentBlock}

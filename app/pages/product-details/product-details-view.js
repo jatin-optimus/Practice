@@ -14,6 +14,36 @@ function($, BaseView, template) {
         });
     };
 
+    var getProductDescriptonTabs = function() {
+        var _items = [];
+        _items.push({
+            sectionTitle: $('#grp_3Tab').text(),
+            content: $('#grp_3')
+        });
+        _items.push({
+            sectionTitle: $('#grp_1Tab').text(),
+            content: $('#grp_1')
+        });
+        _items.push({
+            sectionTitle: $('#grp_2Tab').text(),
+            content: $('#grp_2'),
+        });
+        _items.push({
+            sectionTitle: $('#grp_4Tab').text(),
+            content: $('#grp_4')
+        });
+
+        var _bellows = {
+            class: 'js-product-descriotion-bellows',
+            items: _items
+        };
+
+        return {
+            bellows: _bellows
+        };
+
+    };
+
     return {
         template: template,
         extend: BaseView,
@@ -25,6 +55,9 @@ function($, BaseView, template) {
             },
             productId: function() {
                 return $('.prod_itemid').text();
+            },
+            productDescriptionTabs: function() {
+                return getProductDescriptonTabs();
             },
             steps: function() {
                 // return $('.prodRightCon');
