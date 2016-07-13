@@ -11,7 +11,6 @@ define([
                 return url.indexOf('shoppingCartSummaryNew') > -1;
             }, {
                 complete: function(data, xhr) {
-                    debugger;
                 }
             }
         );
