@@ -8,8 +8,8 @@ function($, BaseView, template) {
         return $container.find('.prod_select_con').map(function(_, item) {
             var $item = $(item);
             return {
-                // hidden: $item.find('.prodSelectRefCon2'),
-                swatches: $item
+                label: $(item).find('.prodSelectRefCon2').find('span'),
+                swatches: $item.find('.prodSelectRefCon:not(.prodSelectRefCon2)')
             };
         });
     };
@@ -68,7 +68,8 @@ function($, BaseView, template) {
                 return {
                     form: $form,
                     hiddenData: $form.find('#addToCartAttributes'),
-                    swatchesContainer: getProductSwatches($form)
+                    swatchesContainer: getProductSwatches($form),
+                    addToCart: $form.find('.addToCartCon')
                 };
             },
             hiddenContainer: function() {
@@ -79,6 +80,15 @@ function($, BaseView, template) {
             },
             price: function() {
                 return $('#ref2QIPriceTitleS');
+            },
+            overViewHidden: function() {
+                return $('.prodOverview1, .prodOverview2');
+            },
+            addToCartDiv: function() {
+                return $('#addToCartInfo');
+            },
+            cartSummary: function() {
+                return $('#shoppingCartSummaryNew');
             }
         }
 
