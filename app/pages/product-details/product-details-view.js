@@ -1,9 +1,12 @@
 define([
     '$',
     'global/baseView',
-    'dust!pages/product-details/product-details'
+    'dust!pages/product-details/product-details',
+    'pages/product-details/parsers/you-may-like-parser'
 ],
-function($, BaseView, template) {
+function($, BaseView, template, youMayLkeParser) {
+
+
     var getProductSwatches = function($container) {
         return $container.find('.prod_select_con').map(function(_, item) {
             var $item = $(item);

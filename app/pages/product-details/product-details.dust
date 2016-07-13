@@ -35,6 +35,10 @@
         {/productDescriptionTabs}
     </div>
 
+    <div class="c-back-to-top">
+        <a href="#" >Back to Top <img src="{@getUrl path="img/back-to-top.png" /}"></a>
+    </div>
+
 {/contentBlock}
 
 {<uiScripts}

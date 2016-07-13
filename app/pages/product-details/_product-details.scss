@@ -2,6 +2,22 @@
 // ===
 //
 
-.t-product-details-page {
+.t-product-details {
 
+    .c-back-to-top {
+        text-align: center;
+    }
+
+    .c-back-to-top> a {
+        color: #464749;
+        padding: 20px 0px 15px 0px;
+        display: inline-block;
+        font-weight: bold;
+        vertical-align: middle;
+    }
+    .c-back-to-top > a > img {
+        max-width: 17px;
+        top: 4px;
+        position: relative;
+    }
 }
