@@ -56,6 +56,9 @@ function($, BaseView, template) {
             productId: function() {
                 return $('.prod_itemid').text();
             },
+            priceSection: function() {
+                return $('.prod_select_title3');
+            },
             productDescriptionTabs: function() {
                 return getProductDescriptonTabs();
             },
@@ -65,16 +68,14 @@ function($, BaseView, template) {
                 return {
                     form: $form,
                     hiddenData: $form.find('#addToCartAttributes'),
-                    swatchesContainer: getProductSwatches($form),
-                    selectTag: $('#productSelectTag'),
-                    addToCart: $('.addToCartCon')
+                    swatchesContainer: getProductSwatches($form)
                 };
             },
             hiddenContainer: function() {
-                return $('.prodOverview1, .prodOverview2');
+                return $('.prodLeftCon, .prodRightCon2');
             },
             imageSection: function() {
-                return $('#productDisplaySkuImage').parent();
+                return $('#scene7DHTMLViewerFlyout').parent();
             },
             price: function() {
                 return $('#ref2QIPriceTitleS');
