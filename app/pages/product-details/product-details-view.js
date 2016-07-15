@@ -4,7 +4,7 @@ define([
     'dust!pages/product-details/product-details',
     'pages/product-details/parsers/you-may-like-parser'
 ],
-function($, BaseView, template, youMayLkeParser) {
+function($, BaseView, template) {
 
 
     var getProductSwatches = function($container) {
@@ -92,7 +92,10 @@ function($, BaseView, template, youMayLkeParser) {
             },
             cartSummary: function() {
                 return $('#shoppingCartSummaryNew');
-            }
+            },
+            youMayLikeCarousel: function() {
+                return $('#pdetails_suggestions');
+            },
         }
 
         /**

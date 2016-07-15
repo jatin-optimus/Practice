@@ -35,7 +35,14 @@
             {>"components/bellows/bellows":.bellows/}
         {/productDescriptionTabs}
 
+        <div class="t-product-details__suggested-products c-you-may-also-like js-suggested-products">
+
+        <div class="c-you-may-like-section">
+            {youMayLikeCarousel}
+        </div>
+
         <div hidden>{hiddenContainer}</div>
+
 
     </div>
     {>"components/sheet/sheet" effect="sheetBottom" class="js-added-to-cart-pinny" headerClass="u-border-bottom-light-grey" bodyClass="js-added-to-cart-pinny__body" coverage="100%"  isHeader="true"/}
