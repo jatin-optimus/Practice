@@ -791,3 +791,34 @@
         }
     }
 }
+
+.c-added-to-cart-pinny__body {
+  .satisfactionGuaranteeMsg {
+      display: none;
+  }
+
+  .nonvip {
+      float: left;
+
+      width: 75%;
+
+      font-size: 12px;
+  }
+
+  .addToCartVIPMsgCont {
+      overflow: hidden;
+      padding: 12px 0;
+  }
+
+  #continueShoppingLink {
+      width: 100%;
+  }
+}
+
+#addToCartInfoMsg {
+  display: flex;
+}
+
+.addToCartInfoMsgCon {
+  width: 50%;
+}
