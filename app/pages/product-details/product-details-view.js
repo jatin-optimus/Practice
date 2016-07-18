@@ -1,8 +1,7 @@
 define([
     '$',
     'global/baseView',
-    'dust!pages/product-details/product-details',
-    'pages/product-details/parsers/you-may-like-parser'
+    'dust!pages/product-details/product-details'
 ],
 function($, BaseView, template) {
 
@@ -96,6 +95,12 @@ function($, BaseView, template) {
             youMayLikeCarousel: function() {
                 return $('#pdetails_suggestions');
             },
+            overallRating: function() {
+            var $rating = $('.pr-snippet');
+            $rating.find('.pr-snippet-link').text('Read reviews');
+            $rating.find('.pr-snippet-write-review').addClass('u-visually-hidden');
+            return $rating;
+            }
         }
 
         /**
