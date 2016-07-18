@@ -10,6 +10,8 @@ define([
     'dust!components/scroller/scroller',
     'pages/product-details/ui/pdp-reviews'
 ], function($, ScrollerTemplate, Utils, Magnifik, translator, Hijax, bellows, sheet, ScrollerTmpl, pdpReviews) {
+    var $addToCartPinny = $('.js-added-to-cart-pinny');
+    var $wishlistShade = $('.js-wishlist-shade');
 
     var reviewSection = function() {
         pdpReviews.addNoRatingsSection();
@@ -48,29 +50,17 @@ define([
         window.updateShoppingCartSummary = function() {
             var isValid = !$('.prod_errortext, .ref2Selected.refNotAvailable').length;
             var result = _updateShoppingCartSummary.apply(this, arguments);
-            var html = $('.addToCartTitle').html();
+            var title = $('.addToCartTitle').html();
+            var content = $('#addToCartInfoCont');
+            var $modal = $('#addToCartInfo');
+            $modal.addClass('u-visually-hidden');
 
             $('.c-add-to-cart').toggleClass('m--disabled', isValid);
 
             if (isValid) {
-                /*
-                TODO: Don't hardcode this. Either find the element and wrap
-                it, or store this in dictionary.json if this is the only text
-                we need to target (not recommended).
-                */
-                $('.addToCartTitle').html(
-                    html.replace('Great Choice!', '<b>Great Choice!</b>')
-                );
-
-                var $container = $('.c-addToCartPinny');
-                if ($container.find('.prod_detail_sale_price').length && $container.find('.prod_detail_sale_price').text().length > 0) {
-                    $container.find('.prod_detail_reg_price').addClass('m--lineThrough');
-                }
-
-                $('.c-add-to-cart').removeClass('m--disabled');
-                if (!$('.c-addedToCartPinnyWrapper').hasClass('pinny--is-open')) {
-                    $('.c-addToCartPinny').pinny('open');
-                }
+                $addToCartPinny.find('.c-sheet__title').html(title);
+                $addToCartPinny.find('.js-added-to-cart-pinny__body').html(content);
+                $addToCartPinny.pinny('open');
             }
 
             return result;
@@ -139,6 +129,14 @@ define([
         reviewSection();
         bindEvents();
         updateCartMessage();
+        sheet.init($addToCartPinny, {
+            // close: _onPinnyClose,
+            zIndex: 2000,
+            shade: {
+                zIndex: 1999,
+                cssClass: 'js-wishlist-shade'
+            }
+        });
     };
 
     return productDetailsUI;
