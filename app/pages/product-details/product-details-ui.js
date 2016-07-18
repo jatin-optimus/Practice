@@ -51,7 +51,8 @@ define([
             var isValid = !$('.prod_errortext, .ref2Selected.refNotAvailable').length;
             var result = _updateShoppingCartSummary.apply(this, arguments);
             var title = $('.addToCartTitle').html();
-            var content = $('#addToCartInfoCont');
+            var $content = $('#addToCartInfoCont');
+            $content.find('#monetate_selectorBanner_b9e875a3_00').remove();
             var $modal = $('#addToCartInfo');
             $modal.addClass('u-visually-hidden');
 
@@ -59,7 +60,8 @@ define([
 
             if (isValid) {
                 $addToCartPinny.find('.c-sheet__title').html(title);
-                $addToCartPinny.find('.js-added-to-cart-pinny__body').html(content);
+                $addToCartPinny.find('.js-added-to-cart-pinny__body').html($content);
+                $addToCartPinny.find('.pinny__close').addClass('container-close');
                 $addToCartPinny.pinny('open');
             }
 
@@ -67,7 +69,6 @@ define([
         };
 
     };
-
 
     var updateCartMessage = function updateCartMessage() {
         var hijax = new Hijax();
@@ -129,12 +130,18 @@ define([
         reviewSection();
         bindEvents();
         updateCartMessage();
+        $('body').on('click', '#continueShoppingLink', function() {
+            var $closeButton = $addToCartPinny.find('.pinny__close');
+            $closeButton.click();
+        });
         sheet.init($addToCartPinny, {
-            // close: _onPinnyClose,
             zIndex: 2000,
             shade: {
                 zIndex: 1999,
                 cssClass: 'js-wishlist-shade'
+            },
+            closed: function() {
+                $('#addToCartInfo_mask').css('display', 'none');
             }
         });
     };
