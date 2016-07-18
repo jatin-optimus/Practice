@@ -48,47 +48,22 @@ define([
 
         var _updateShoppingCartSummary = window.updateShoppingCartSummary;
         window.updateShoppingCartSummary = function() {
-            var isValid = !$('.prod_errortext, .ref2Selected.refNotAvailable').length;
             var result = _updateShoppingCartSummary.apply(this, arguments);
+            var $modal = $('#addToCartInfo');
             var title = $('.addToCartTitle').html();
             var $content = $('#addToCartInfoCont');
             $content.find('#monetate_selectorBanner_b9e875a3_00').remove();
-            var $modal = $('#addToCartInfo');
             $modal.addClass('u-visually-hidden');
-
-            $('.c-add-to-cart').toggleClass('m--disabled', isValid);
-
-            if (isValid) {
-                $addToCartPinny.find('.c-sheet__title').html(title);
-                $addToCartPinny.find('.js-added-to-cart-pinny__body').html($content);
-                $addToCartPinny.find('.pinny__close').addClass('container-close');
-                $addToCartPinny.pinny('open');
-            }
+            $addToCartPinny.find('.c-sheet__title').html(title);
+            $addToCartPinny.find('.js-added-to-cart-pinny__body').html($content);
+            $addToCartPinny.find('.pinny__close').addClass('container-close');
+            $addToCartPinny.pinny('open');
 
             return result;
         };
 
     };
 
-    var updateCartMessage = function updateCartMessage() {
-        var hijax = new Hijax();
-        // Intercept AJAX requests
-        hijax.set(
-            'UpdateCartMessageHijaxProxy',
-            function(url) {
-                return /quickInfoAjaxAddToCart/.test(url);
-            },
-            {
-                complete: function(data, xhr) {
-                    interceptAddToCart();
-                    if ($('#addToCartInfoCont').find('#addToCartInfoTitle').html() === null ) {
-                        $('#addToCartInfoTitle').insertAfter($('#addToCartVIPMsg'));
-                    }
-                    $('#addToCartInfoTitle').append($('<span class="addToCartTitle"></span>'));
-                }
-            }
-        );
-    };
     var buildYouMayAlsoLikeCarousel = function() {
         var $container = $('.js-suggested-products');
         var $parsedProducts = [];
@@ -129,7 +104,7 @@ define([
         buildYouMayAlsoLikeCarousel();
         reviewSection();
         bindEvents();
-        updateCartMessage();
+        interceptAddToCart();
         $('body').on('click', '#continueShoppingLink', function() {
             var $closeButton = $addToCartPinny.find('.pinny__close');
             $closeButton.click();

@@ -9,8 +9,10 @@ function($, BaseView, template) {
     var getProductSwatches = function($container) {
         return $container.find('.prod_select_con').map(function(_, item) {
             var $item = $(item);
+            $item.find('.mSizeChart').find('a').text('Size Chart');
+            $item.find('.prod_select_title, .prod_select_title2').wrapAll('<div class="c-swatches-heading" />');
             return {
-                label: $(item).find('.prodSelectRefCon2').find('span'),
+                label: $(item).find('.prodSelectRefCon2').find('.c-swatches-heading'),
                 swatches: $item.find('.prodSelectRefCon:not(.prodSelectRefCon2)')
             };
         });
@@ -65,7 +67,6 @@ function($, BaseView, template) {
                 return getProductDescriptonTabs();
             },
             steps: function() {
-                // return $('.prodRightCon');
                 var $form = $('#addToCartForm');
                 return {
                     form: $form,

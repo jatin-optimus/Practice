@@ -78,7 +78,7 @@
     .c-you-may-like-section {
         background: $white;
     }
-    .c-heading {
+    .c-swatches-heading {
         margin: 0 12px 12px;
         padding: 10px;
 
@@ -92,7 +92,8 @@
     #ref2QISizeCont,
     #ref2QIWidthCont {
         margin-top: -12px;
-        .ref2QISwatch {
+        .ref2QISwatch,
+        .mSizeChart {
             float: left;
 
             width: 30%;
@@ -142,17 +143,19 @@
     }
 
     .prod_select_title {
+        padding-right: 6px;
+
         color: #464749;
         font-weight: bold;
         font-size: 15px;
     }
 
     .mSizeChart {
-        float: none !important;
+        float: left !important;
 
         margin: 10px 0 0 0 !important;
         a {
-            color: #ff8413;
+            color: #ff8413 !important;
             font-family: verdana;
             font-weight: bold;
             font-size: 11px;
@@ -771,16 +774,8 @@
     }
 
     .addToCartCon2 {
-        display: flex;
         #selQtyTitle {
             display: none;
         }
-        // select {
-        //     flex: 1;
-        // }
-        //
-        // .prod_add_to_cart {
-        //     flex: 1;
-        // }
     }
 }
