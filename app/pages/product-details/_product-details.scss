@@ -122,6 +122,18 @@
 
                 color: #fff;
             }
+
+            a.ref2NActive {
+                border: 1px solid #ccc;
+
+                color: #ccc;
+            }
+
+            a.refNotAvailable {
+                background-color: #eee88c !important;
+                border: 1px solid #ccc;
+                color: #600 !important;
+            }
         }
     }
 
