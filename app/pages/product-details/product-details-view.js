@@ -96,10 +96,10 @@ function($, BaseView, template) {
                 return $('#pdetails_suggestions');
             },
             overallRating: function() {
-            var $rating = $('.pr-snippet');
-            $rating.find('.pr-snippet-link').text('Read reviews');
-            $rating.find('.pr-snippet-write-review').addClass('u-visually-hidden');
-            return $rating;
+                var $rating = $('.pr-snippet');
+                $rating.find('.pr-snippet-link').text('Read reviews');
+                $rating.find('.pr-snippet-write-review').addClass('u-visually-hidden');
+                return $rating;
             }
         }
 
