@@ -10,41 +10,39 @@
             {overallRating}
         </div>
         <div id="content" class="container_nh">
-        <div hidden>{overViewHidden}</div>
-        <div class="prod_container">{imageSection}</div>
+            <div class="prod_container">{imageSection}</div>
+
+            <div class="c-price">
+               {priceSection}
+           </div>
+
+            {#steps}
+                {form|openTag|s}
+                    {hiddenData}
+                    {addToCartDiv}
+                    <div id="product_select_container" class="prodSelectCon">
+                        {#swatchesContainer}
+                            {label}
+                            {swatches}
+                        {/swatchesContainer}
+                        <div hidden>{cartSummary}</div>
+                        {addToCart}
+                    </div>
+                {form|closeTag|s}
+            {/steps}
+
+            {#productDescriptionTabs}
+                {>"components/bellows/bellows":.bellows/}
+            {/productDescriptionTabs}
+
+            <div class="t-product-details__suggested-products c-you-may-also-like js-suggested-products">
+
+            <div class="c-you-may-like-section">
+                {youMayLikeCarousel}
+            </div>
+
+            <div hidden>{hiddenContainer}</div>
         </div>
-
-        <div class="c-price">
-           {priceSection}
-       </div>
-
-        {#steps}
-            {form|openTag|s}
-                {hiddenData}
-                {addToCartDiv}
-                <div id="product_select_container" class="prodSelectCon">
-                    {#swatchesContainer}
-                        {label}
-                        {swatches}
-                    {/swatchesContainer}
-                    <div hidden>{cartSummary}</div>
-                    {addToCart}
-                </div>
-            {form|closeTag|s}
-        {/steps}
-
-        {#productDescriptionTabs}
-            {>"components/bellows/bellows":.bellows/}
-        {/productDescriptionTabs}
-
-        <div class="t-product-details__suggested-products c-you-may-also-like js-suggested-products">
-
-        <div class="c-you-may-like-section">
-            {youMayLikeCarousel}
-        </div>
-
-        <div hidden>{hiddenContainer}</div>
-
 
     </div>
     {>"components/sheet/sheet" effect="sheetBottom" class="js-added-to-cart-pinny" headerClass="u-border-bottom-light-grey" bodyClass="js-added-to-cart-pinny__body c-added-to-cart-pinny__body" coverage="100%"  isHeader="true"/}

@@ -61,7 +61,7 @@ function($, BaseView, template) {
                 return $('.prod_itemid').text();
             },
             priceSection: function() {
-                return $('.prod_select_title3');
+                return $('.prodOverview1').find('.prod_select_title3');
             },
             productDescriptionTabs: function() {
                 return getProductDescriptonTabs();
@@ -83,9 +83,6 @@ function($, BaseView, template) {
             },
             price: function() {
                 return $('#ref2QIPriceTitleS');
-            },
-            overViewHidden: function() {
-                return $('.prodOverview1, .prodOverview2');
             },
             addToCartDiv: function() {
                 return $('#addToCartInfo');
