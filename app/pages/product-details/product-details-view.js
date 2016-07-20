@@ -21,6 +21,7 @@ function($, BaseView, template) {
     var getProductDescriptonTabs = function() {
         var _items = [];
         _items.push({
+            bellowsItemClass: 'js-video-bellows',
             sectionTitle: $('#grp_3Tab').text(),
             content: $('#grp_3').addClass('c-video-tab')
         });
@@ -29,6 +30,7 @@ function($, BaseView, template) {
             content: $('#grp_1')
         });
         _items.push({
+            bellowsItemClass: 'js-reviews-bellows',
             sectionTitle: $('#grp_2Tab').text(),
             content: $('#grp_2'),
         });
