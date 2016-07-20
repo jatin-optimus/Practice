@@ -22,23 +22,23 @@ define([
     var bindEvents = function() {
         $('body').on('click', '.pr-page-next', function() {
             setTimeout(function() {
-                pdpReviews.addNoRatingsSection();
-                pdpReviews.setHeadings();
-                pdpReviews.updatePaginationButtons();
+                reviewsUI.addNoRatingsSection();
+                reviewsUI.setHeadings();
+                reviewsUI.updatePaginationButtons();
             }, 1000);
         });
         $('body').on('click', '.pr-page-prev', function() {
             setTimeout(function() {
-                pdpReviews.addNoRatingsSection();
-                pdpReviews.setHeadings();
-                pdpReviews.updatePaginationButtons();
+                reviewsUI.addNoRatingsSection();
+                reviewsUI.setHeadings();
+                reviewsUI.updatePaginationButtons();
             }, 1000);
         });
         $('body').on('change', '#pr-sort-reviews', function() {
             setTimeout(function() {
-                pdpReviews.addNoRatingsSection();
-                pdpReviews.setHeadings();
-                pdpReviews.updatePaginationButtons();
+                reviewsUI.addNoRatingsSection();
+                reviewsUI.setHeadings();
+                reviewsUI.updatePaginationButtons();
             }, 1000);
         });
     };
