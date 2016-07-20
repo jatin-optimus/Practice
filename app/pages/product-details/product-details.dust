@@ -40,7 +40,6 @@
                     {youMayLikeCarousel}
                 </div>
 
-                <div hidden>{hiddenContainer}</div>
             </div>
 
             </div>

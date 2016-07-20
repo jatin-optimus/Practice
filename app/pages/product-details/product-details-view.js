@@ -23,7 +23,7 @@ function($, BaseView, template) {
         _items.push({
             bellowsItemClass: 'js-video-bellows',
             sectionTitle: $('#grp_3Tab').text(),
-            content: $('#grp_3')
+            content: $('#grp_3').addClass('c-video-tab')
         });
         _items.push({
             sectionTitle: $('#grp_1Tab').text(),
@@ -76,9 +76,6 @@ function($, BaseView, template) {
                     swatchesContainer: getProductSwatches($form),
                     addToCart: $form.find('.addToCartCon')
                 };
-            },
-            hiddenContainer: function() {
-                return $('.prodLeftCon, .prodRightCon2');
             },
             imageSection: function() {
                 return $('#scene7DHTMLViewerFlyout').parent();
