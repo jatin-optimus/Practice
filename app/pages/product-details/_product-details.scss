@@ -3,6 +3,10 @@
 //
 
 .t-product-details {
+    #scene7DHTMLViewerFlyout {
+        min-height: 300px;
+    }
+
     .c-tool-tip {
         color: #464749;
         font-weight: bold;
@@ -750,6 +754,11 @@
         position: absolute;
         top: 0;
         right: 0;
+
+        img {
+            max-width: 85px;
+            max-height: 85px;
+        }
     }
     .c-overallRating {
         float: right;
