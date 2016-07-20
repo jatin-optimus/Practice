@@ -82,7 +82,10 @@ function($, BaseView, template) {
                 };
             },
             imageSection: function() {
-                return $('#scene7DHTMLViewerFlyout').parent();
+                var $imageSection = $('#scene7DHTMLViewerFlyout').parent();
+                $imageSection.find('br').remove();
+                $imageSection.find('.prod_shoe_type').addClass('c-tool-tip').html($imageSection.find('.prod_shoe_type').html().replace(/[a-zA-Z\' ]/g, ''));
+                return $imageSection;
             },
             price: function() {
                 return $('#ref2QIPriceTitleS');

@@ -3,6 +3,12 @@
 //
 
 .t-product-details {
+    .c-tool-tip {
+        color: #464749;
+        font-weight: bold;
+        font-size: 12px;
+        vertical-align: top;
+    }
     .c-back-to-top {
         text-align: center;
     }
@@ -735,17 +741,20 @@
         }
         #videoLinkButton + div {
             position: initial !important;
+
+            padding-left: 12px !important;
         }
     }
 
     #videoLinkButton {
         position: absolute;
+        top: 0;
         right: 0;
     }
     .c-overallRating {
         float: right;
 
-        margin: 6px;
+        margin-top: 6px;
 
         .pr-snippet-link {
             color: #0a64a3;
@@ -795,14 +804,16 @@
             }
         }
         .pr-stars {
-            float: none;
+            float: left;
 
-            display: inline-block;
-            width: 136px;
-            height: 25px;
+            width: 70px;
+            height: 15px;
 
-            background-position: 0 !important;
-            background-size: 136px 25px;
+            background-repeat: no-repeat;
+            background-position: 0 2px;
+            background-size: 65px;
+
+            line-height: 15px;
         }
         .pr-stars-0-sm {
             background-image: url('../img/0.0_star.gif');
