@@ -21,7 +21,6 @@ function($, BaseView, template) {
     var getProductDescriptonTabs = function() {
         var _items = [];
         _items.push({
-            bellowsItemClass: 'js-video-bellows',
             sectionTitle: $('#grp_3Tab').text(),
             content: $('#grp_3')
         });
@@ -31,7 +30,6 @@ function($, BaseView, template) {
         });
         _items.push({
             sectionTitle: $('#grp_2Tab').text(),
-            bellowsItemClass: 'js-reviews-bellows',
             content: $('#grp_2'),
         });
         _items.push({
@@ -68,6 +66,10 @@ function($, BaseView, template) {
             productDescriptionTabs: function() {
                 return getProductDescriptonTabs();
             },
+            shopRunner: function() {
+                var $shopRunnerSection = $('#srd_pd');
+                return $shopRunnerSection;
+            },
             steps: function() {
                 var $form = $('#addToCartForm');
                 return {
@@ -76,9 +78,6 @@ function($, BaseView, template) {
                     swatchesContainer: getProductSwatches($form),
                     addToCart: $form.find('.addToCartCon')
                 };
-            },
-            hiddenContainer: function() {
-                return $('.prodLeftCon, .prodRightCon2');
             },
             imageSection: function() {
                 return $('#scene7DHTMLViewerFlyout').parent();

@@ -30,6 +30,10 @@
                     {form|closeTag|s}
                 {/steps}
 
+                <div id="sr_productDetailDiv" name="sr_productDetailDiv" style="display:block;padding: 10px; background-color: #fff;">
+                    {shopRunner}
+                </div>
+
                 {#productDescriptionTabs}
                     {>"components/bellows/bellows":.bellows/}
                 {/productDescriptionTabs}
@@ -40,7 +44,6 @@
                     {youMayLikeCarousel}
                 </div>
 
-                <div hidden>{hiddenContainer}</div>
             </div>
 
             </div>
