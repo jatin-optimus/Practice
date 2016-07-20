@@ -7,6 +7,34 @@
         min-height: 300px;
     }
 
+    .prod_detail_preorder_inventory {
+        clear: both;
+
+        display: block;
+        height: auto;
+        padding-top: 13px;
+
+        color: #ff3112;
+        font-weight: bold;
+        font-size: 13px;
+    }
+
+    .c-slideshow__slide {
+        width: 50%;
+    }
+
+    .c-fit-tip {
+        margin-left: 5px;
+        padding: 0 12px !important;
+
+        color: #333;
+        font-family: verdana;
+
+        > div {
+            display: none;
+        }
+    }
+
     .prod_detail_sale_price {
         padding-right: 6px;
 

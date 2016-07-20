@@ -86,7 +86,7 @@ define([
     var buildYouMayAlsoLikeCarousel = function() {
         var $container = $('.js-suggested-products');
         var $parsedProducts = [];
-        var $heading = $('<h2 class="c-title c--small u-margin-bottom-md">').text('You Might Also Like');
+        var $heading = $('<h2 class="c-carousel__title">').text('You Might Also Like');
         var productTileData = [];
         setTimeout(function() {
             if ($('#PRODPG1_cm_zone').children().length === 0) {

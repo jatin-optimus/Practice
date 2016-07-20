@@ -38,7 +38,7 @@
                     {>"components/bellows/bellows":.bellows/}
                 {/productDescriptionTabs}
 
-                <div class="t-product-details__suggested-products c-you-may-also-like js-suggested-products">
+                <div class="t-product-details__suggested-products c-you-may-also-like js-suggested-products  u-padding-top u--tight">
 
                 <div class="c-you-may-like-section">
                     {youMayLikeCarousel}
