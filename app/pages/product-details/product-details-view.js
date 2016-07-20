@@ -58,7 +58,9 @@ function($, BaseView, template) {
         context: {
             templateName: 'product-details',
             title: function() {
-                return $('.prodOverview1').find('.prod_title > h1').text();
+                var $title = $('.prodOverview1').find('.prod_title > h1');
+                $title.find('span').removeAttr('style');
+                return $title;
             },
             productId: function() {
                 return $('.prod_itemid').text();
@@ -75,6 +77,7 @@ function($, BaseView, template) {
             },
             steps: function() {
                 var $form = $('#addToCartForm');
+                $form.find('#addToCartLink').append('add to cart');
                 return {
                     form: $form,
                     hiddenData: $form.find('#addToCartAttributes'),

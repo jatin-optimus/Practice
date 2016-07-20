@@ -2,7 +2,7 @@
 
 {<contentBlock}
     <div class="t-product-details-page">
-        <div class="c-product-title u--bold">{title}</div>
+        <div class="c-product-title">{title}</div>
         <div class="c-overallRating">
             {overallRating}
         </div>
