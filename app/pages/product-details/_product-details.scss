@@ -27,6 +27,7 @@
 // ===
 
 .t-product-details-page {
+    padding: 12px;
     background-color: #dadada;
     .c-video-tab center {
         overflow: hidden;
@@ -873,6 +874,10 @@
 
         text-decoration: underline;
     }
+}
+
+.t-product-layout {
+    background: $white;
 }
 
 #addToCartInfoMsg {
