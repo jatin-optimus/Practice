@@ -28,6 +28,7 @@
 
 .t-product-details-page {
     padding: 12px;
+
     background-color: #dadada;
     .c-video-tab center {
         overflow: hidden;
@@ -676,6 +677,22 @@
             }
         }
     }
+
+    .c-main-container {
+        position: relative;
+        > div {
+            width: 100% !important;
+            height: auto !important;
+        }
+        #videoLinkButton + div {
+            position: initial !important;
+        }
+    }
+
+    #videoLinkButton {
+        position: absolute;
+        right: 0;
+    }
     .c-overallRating {
         float: right;
 
@@ -784,7 +801,7 @@
         font-size: 15px;
     }
 
-    .prod_detail_vip_price2 {
+    [class*="prod_detail_vip_price"] {
         color: #005cae;
         font-weight: bold;
         font-size: 15px;
@@ -797,13 +814,14 @@
     }
 
     .c-product-title {
+        float: left;
+
+        width: 49%;
         padding: 6px;
 
         font-family: verdana-bold;
         font-size: 15px;
         line-height: 26px;
-        width: 49%;
-        float: left;
     }
 }
 
