@@ -8,8 +8,9 @@ define([
     'bellows',
     'components/sheet/sheet-ui',
     'dust!components/scroller/scroller',
-    'pages/product-details/ui/reviews-ui'
-], function($, ScrollerTemplate, Utils, Magnifik, translator, Hijax, bellows, sheet, ScrollerTmpl, reviewsUI) {
+    'pages/product-details/ui/reviews-ui',
+    'scrollTo'
+], function($, ScrollerTemplate, Utils, Magnifik, translator, Hijax, bellows, sheet, ScrollerTmpl, reviewsUI, scrollTo) {
     var $addToCartPinny = $('.js-added-to-cart-pinny');
     var $wishlistShade = $('.js-wishlist-shade');
 
@@ -40,6 +41,24 @@ define([
                 reviewsUI.setHeadings();
                 reviewsUI.updatePaginationButtons();
             }, 1000);
+        });
+        $('body').on('click', '.pr-snippet-stars', function() {
+            var $reviewsBellows = $('.js-reviews-bellows');
+            // Scroll to Reviews Bellows
+            $.scrollTo($reviewsBellows);
+            // Open Bellows for Reviews and Rating
+            if (!$reviewsBellows.hasClass('bellows--is-open')) {
+                $reviewsBellows.find('.bellows__header').click();
+            }
+        });
+        $('body').on('click', '#videoLinkButton', function() {
+            var $videoBellows = $('.js-video-bellows');
+            // Scroll to Reviews Bellows
+            $.scrollTo($videoBellows);
+            // Open Bellows for Reviews and Rating
+            if (!$videoBellows.hasClass('bellows--is-open')) {
+                $videoBellows.find('.bellows__header').click();
+            }
         });
     };
 
