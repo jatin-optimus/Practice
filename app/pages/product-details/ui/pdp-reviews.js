@@ -47,7 +47,6 @@ function($) {
     return {
         setHeadings: setHeadings,
         updatePaginationButtons: updatePaginationButtons,
-        addNoRatingsSection: addNoRatingsSection,
-        createRangeInReview: createRangeInReview
+        addNoRatingsSection: addNoRatingsSection
     };
 });
