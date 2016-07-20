@@ -23,6 +23,45 @@
 
         max-width: 17px;
     }
+
+    .s7flyoutSwatches {
+        position: static;
+        top: 324px;
+        display: inline-block;
+        width: 100%;
+        text-align: left;
+        height: auto !important;
+        margin-bottom: 5px;
+        float: left;
+    }
+
+    .s7flyoutStaticImage div {
+        width: 100%;
+    }
+
+    #scene7DHTMLViewerFlyout {
+        position: relative;
+        height: auto !important;
+        width: 438px;
+        display: inline-block;
+        width: 100% !important;
+        text-align: center;
+    }
+
+    .s7flyoutStaticImage {
+        width: 295px;
+        height: 235px;
+        display: inline-block;
+        position: static;
+        top: 48px;
+        margin-top: 13px;
+    }
+
+    .s7flyoutSwatches .s7flyoutSwatch {
+        width: 54px !important;
+        height: 72px !important;
+        position: relative !important;
+    }
 }
 
 // PDP
