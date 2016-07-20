@@ -7,6 +7,14 @@
         min-height: 300px;
     }
 
+    .prod_detail_sale_price {
+        padding-right: 6px;
+
+        color: #ff2812;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
     .c-tool-tip {
         color: #464749;
         font-weight: bold;
@@ -865,6 +873,8 @@
 
     .prod_detail_reg_price3,
     .prod_detail_reg_price {
+        padding-right: 6px;
+
         color: $neutral-240;
         font-weight: bold;
         font-size: 15px;

@@ -11,6 +11,7 @@ function($, BaseView, template) {
             var $item = $(item);
             $item.find('.mSizeChart').find('a').text('Size Chart');
             $item.find('.prod_select_title, .prod_select_title2').wrapAll('<div class="c-swatches-heading" />');
+            $item.find('.fit_tip').first().parent().addClass('c-fit-tip');
             return {
                 label: $(item).find('.prodSelectRefCon2').find('.c-swatches-heading'),
                 swatches: $item.find('.prodSelectRefCon:not(.prodSelectRefCon2)')
@@ -84,7 +85,9 @@ function($, BaseView, template) {
             imageSection: function() {
                 var $imageSection = $('#scene7DHTMLViewerFlyout').parent();
                 $imageSection.find('br').remove();
-                $imageSection.find('.prod_shoe_type').addClass('c-tool-tip').html($imageSection.find('.prod_shoe_type').html().replace(/[a-zA-Z\' ]/g, ''));
+                $imageSection.find('.prod_shoe_type')
+                    .addClass('c-tool-tip')
+                    .html($imageSection.find('.prod_shoe_type').html().replace(/[a-zA-Z\' ]/g, ''));
                 return $imageSection;
             },
             price: function() {
