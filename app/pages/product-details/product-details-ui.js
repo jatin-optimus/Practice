@@ -8,38 +8,37 @@ define([
     'bellows',
     'components/sheet/sheet-ui',
     'dust!components/scroller/scroller',
-    'pages/product-details/ui/pdp-reviews'
-], function($, ScrollerTemplate, Utils, Magnifik, translator, Hijax, bellows, sheet, ScrollerTmpl, pdpReviews) {
+    'pages/product-details/ui/reviews-ui'
+], function($, ScrollerTemplate, Utils, Magnifik, translator, Hijax, bellows, sheet, ScrollerTmpl, reviewsUI) {
     var $addToCartPinny = $('.js-added-to-cart-pinny');
     var $wishlistShade = $('.js-wishlist-shade');
 
     var reviewSection = function() {
-        pdpReviews.addNoRatingsSection();
-        pdpReviews.setHeadings();
-        pdpReviews.updatePaginationButtons();
-        pdpReviews.createRangeInReview();
+        reviewsUI.addNoRatingsSection();
+        reviewsUI.setHeadings();
+        reviewsUI.updatePaginationButtons();
     };
 
     var bindEvents = function() {
         $('body').on('click', '.pr-page-next', function() {
             setTimeout(function() {
-                pdpReviews.addNoRatingsSection();
-                pdpReviews.setHeadings();
-                pdpReviews.updatePaginationButtons();
+                reviewsUI.addNoRatingsSection();
+                reviewsUI.setHeadings();
+                reviewsUI.updatePaginationButtons();
             }, 1000);
         });
         $('body').on('click', '.pr-page-prev', function() {
             setTimeout(function() {
-                pdpReviews.addNoRatingsSection();
-                pdpReviews.setHeadings();
-                pdpReviews.updatePaginationButtons();
+                reviewsUI.addNoRatingsSection();
+                reviewsUI.setHeadings();
+                reviewsUI.updatePaginationButtons();
             }, 1000);
         });
         $('body').on('change', '#pr-sort-reviews', function() {
             setTimeout(function() {
-                pdpReviews.addNoRatingsSection();
-                pdpReviews.setHeadings();
-                pdpReviews.updatePaginationButtons();
+                reviewsUI.addNoRatingsSection();
+                reviewsUI.setHeadings();
+                reviewsUI.updatePaginationButtons();
             }, 1000);
         });
     };
