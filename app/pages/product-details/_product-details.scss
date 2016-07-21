@@ -358,6 +358,7 @@
                 font-weight: bold;
                 line-height: 25px;
                 text-align: center;
+                float: left;
             }
             .pr-stars {
                 float: none;
@@ -397,7 +398,7 @@
                 background-image: url('../img/4.0_star.gif');
             }
             .pr-stars-4_5 {
-                width: 179px;
+                width: 158px;
 
                 background-image: url('../img/4.5_star.gif');
                 background-size: 158px 30px;
@@ -709,15 +710,8 @@
                 }
             }
 
-            .pr-other-attribute-value-histogram-barValue {
-                height: 100%;
-
-                background-color: #5dad30;
-            }
             p {
                 display: inline-block;
-                //sfloat: left;
-
                 line-height: normal;
             }
             .pr-other-attribute-value-histogram-stats-pct {
@@ -904,6 +898,18 @@
         }
     }
 
+    .c-reviews-bellows {
+        .c-bellows__list a {
+            padding: 0;
+        }
+    }
+
+    .pr-other-attribute-value-histogram-barValue {
+        height: 100%;
+
+        background-color: #5dad30;
+    }
+
     .prod_detail_reg_price3,
     .prod_detail_reg_price {
         padding-right: 6px;
@@ -1063,6 +1069,7 @@
 
         text-decoration: underline;
     }
+
 }
 
 .t-product-layout {

@@ -119,11 +119,25 @@ define([
         $('#pdetails_suggestions').addClass('u-visually-hidden');
     };
 
+    // Scrolls to video section
+    var scrollOnVideoClick = function scrollOnVideoClick() {
+        var $bellows = $('.c-pdp-tabs');
+        $('#watchVideoButton').on('click', function() {
+            var $videoTab = $bellows.find('.bellows__item:first-child');
+            $bellows.bellows('open', 0);
+            $.scrollTo($videoTab);
+        });
+    };
+
     var productDetailsUI = function() {
         buildYouMayAlsoLikeCarousel();
         reviewSection();
         bindEvents();
         interceptAddToCart();
+        // Opening the video bellow by default to match mock.
+        $('.js-product-descriotion-bellows').bellows('open', 0);
+
+        // scrollOnVideoClick();
         $('body').on('click', '#continueShoppingLink', function() {
             var $closeButton = $addToCartPinny.find('.pinny__close');
             $closeButton.click();

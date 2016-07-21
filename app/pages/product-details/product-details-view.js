@@ -31,7 +31,7 @@ function($, BaseView, template) {
             content: $('#grp_1')
         });
         _items.push({
-            bellowsItemClass: 'js-reviews-bellows',
+            bellowsItemClass: 'js-reviews-bellows c-reviews-bellows',
             sectionTitle: $('#grp_2Tab').text(),
             content: $('#grp_2'),
         });
