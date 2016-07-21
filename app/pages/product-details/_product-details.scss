@@ -363,6 +363,45 @@
         p.pr-snippet-review-count {
             font-size: $font-size;
         }
+
+        .pr-review-sort-box {
+            margin-bottom: $unit;
+
+            label {
+                float: right;
+            }
+
+        }
+
+        .pr-review-sort-box,
+        .pr-pagination-bottom {
+            position: relative;
+
+            width: 100%;
+
+            select {
+                height: 41px;
+                padding: 0;
+                border: 1px solid #bbb;
+
+                border-radius: 2.5px;
+                background: linear-gradient(to bottom, #f7f7f7, #eee);
+                outline: none;
+
+                line-height: 20px;
+                text-align: right;
+
+                -webkit-appearance: none;
+
+                &:focus,
+                &:active {
+                    border-color: #bbb;
+
+                    outline: none;
+                }
+            }
+        }
+
         .pr-snapshot-rating {
             margin-top: 9px;
             margin-bottom: 12px;
@@ -370,6 +409,8 @@
                 display: none;
             }
             span.pr-rating {
+                float: left;
+
                 display: inline-block;
                 width: 50px;
                 height: 25px;
@@ -383,7 +424,6 @@
                 font-weight: bold;
                 line-height: 25px;
                 text-align: center;
-                float: left;
             }
             .pr-stars {
                 float: none;
@@ -432,33 +472,7 @@
                 background-image: url('../img/5.0_star.gif');
             }
         }
-        .pr-review-sort-box,
-        .pr-pagination-bottom {
-            position: relative;
 
-            width: 100%;
-
-            select {
-                height: 41px;
-                padding: 0;
-                border: 1px solid #bbb;
-
-                border-radius: 2.5px;
-                background: linear-gradient(to bottom, #f7f7f7, #eee);
-                outline: none;
-
-                line-height: 20px;
-
-                -webkit-appearance: none;
-
-                &:focus,
-                &:active {
-                    border-color: #bbb;
-
-                    outline: none;
-                }
-            }
-        }
         .pr-review-points,
         .pr-other-attributes,
         .pr-pagination-top {
@@ -726,6 +740,7 @@
 
             p {
                 display: inline-block;
+
                 line-height: normal;
             }
             .pr-other-attribute-value-histogram-stats-pct {
@@ -1095,7 +1110,6 @@
 
         text-decoration: underline;
     }
-
 }
 
 .t-product-layout {
