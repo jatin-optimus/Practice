@@ -19,7 +19,7 @@
                     {form|openTag|s}
                         {hiddenData}
                         {addToCartDiv}
-                        <div id="product_select_container" class="prodSelectCon">
+                        <div id="product_select_container" class="prodSelectCon c-produt-selection-container">
                             {#swatchesContainer}
                                 {label}
                                 {swatches}

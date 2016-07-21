@@ -173,13 +173,23 @@
     .c-you-may-like-section {
         background: $white;
     }
+
+    .c-produt-selection-container {
+        padding: 0 12px;
+    }
+
     .c-swatches-heading {
-        margin: 0 12px 12px;
+        width: 100%;
+        margin: 12px 0;
         padding: 10px;
+        padding: 9px 11px;
 
         background: #eee;
+        background-image: url('../img/allBrandTab.png');
+        background-size: cover;
 
         color: #464749;
+        font-family: verdana !important;
         font-weight: bold;
         font-size: 15px;
     }
