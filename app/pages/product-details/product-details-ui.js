@@ -60,6 +60,10 @@ define([
                 $videoBellows.find('.bellows__header').click();
             }
         });
+        $('body').on('click', '#continueShoppingLink', function() {
+            var $closeButton = $addToCartPinny.find('.pinny__close');
+            $closeButton.click();
+        });
     };
 
     var interceptAddToCart = function interceptAddToCart() {
@@ -67,6 +71,10 @@ define([
         var _override  = window.updateShoppingCartSummary;
         window.updateShoppingCartSummary = function() {
             var override = _override.apply(this, arguments);
+            if ($('#addToCartButton').attr('src').indexOf('_gr.gif') >= 0) {
+                debugger;
+                $('.prod_add_to_cart').addClass('c--disabled');
+            }
             var $modal = $('#addToCartInfo');
             var $content = $('#addToCartInfoCont');
             $content.find('#continueShoppingLink').insertAfter('#viewCartLink');
@@ -81,6 +89,20 @@ define([
             return _override;
         };
 
+    };
+
+    var interceptCheckAddToCart = function interceptCheckAddToCart() {
+
+        var _override  = window.checkAddToCart;
+        window.checkAddToCart = function() {
+            var override = _override.apply(this, arguments);
+            if ($('#addToCartButton').attr('src').indexOf('_gr.gif') >= 0) {
+                $('.prod_add_to_cart').addClass('c--disabled');
+            } else {
+                $('.prod_add_to_cart').removeClass('c--disabled');
+            }
+            return _override;
+        };
     };
 
     var buildYouMayAlsoLikeCarousel = function() {
@@ -119,15 +141,7 @@ define([
         $('#pdetails_suggestions').addClass('u-visually-hidden');
     };
 
-    var productDetailsUI = function() {
-        buildYouMayAlsoLikeCarousel();
-        reviewSection();
-        bindEvents();
-        interceptAddToCart();
-        $('body').on('click', '#continueShoppingLink', function() {
-            var $closeButton = $addToCartPinny.find('.pinny__close');
-            $closeButton.click();
-        });
+    var initAddToCartSheet = function() {
         sheet.init($addToCartPinny, {
             zIndex: 2000,
             shade: {
@@ -139,6 +153,15 @@ define([
                 $('.js-added-to-cart-pinny').removeClass('js-rendered');
             }
         });
+    };
+
+    var productDetailsUI = function() {
+        buildYouMayAlsoLikeCarousel();
+        reviewSection();
+        bindEvents();
+        initAddToCartSheet();
+        interceptAddToCart();
+        interceptCheckAddToCart();
     };
 
     return productDetailsUI;
