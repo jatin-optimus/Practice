@@ -41,7 +41,7 @@ function($, BaseView, template) {
         });
 
         var _bellows = {
-            class: 'js-product-descriotion-bellows',
+            class: 'js-product-description-bellows',
             items: _items
         };
 
