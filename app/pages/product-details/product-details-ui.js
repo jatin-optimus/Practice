@@ -64,7 +64,28 @@ define([
             var $closeButton = $addToCartPinny.find('.pinny__close');
             $closeButton.click();
         });
+
+        // Opening the video bellow by default to match mock.
+        $('.js-product-description-bellows').bellows('open', 0);
+
+
     };
+
+    var initBellows = function() {
+        $('.c-bellows__item').map(function(_, item) {
+            var $item = $(item);
+            var $icon = $item.find('.c-icon');
+            if ($item.hasClass('bellows--is-open')) {
+                $icon.attr('data-fallback', 'img/png/collapse.png');
+                $icon.find('title').text('collapse');
+                $icon.find('use').attr('xlink:href', '#icon-collapse');
+            }
+        });
+    };
+    // SetTimeout is used because the video bello has been opened
+    // just as the pageload and was takibg some time to chage the icon and holding it.
+
+    setTimeout(initBellows, 500);
 
     var interceptAddToCart = function interceptAddToCart() {
 

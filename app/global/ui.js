@@ -112,7 +112,7 @@ function(
 
     // Handles the icons displayed when bellow is open and closed
     var initBellows = function() {
-        $('body').on('click', '.js-bellows-header', function(e) {
+        $('body').on('click', '.c-bellows__header', function(e) {
             var $target = $(this);
 
             var $icon = $target.find('.c-icon');

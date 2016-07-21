@@ -318,7 +318,7 @@
         padding-bottom: 12px;
     }
 
-    .js-product-descriotion-bellows {
+    .js-product-description-bellows {
         .pr-snapshot-head,
         p.pr-snapshot-average-based-on-text,
         .pr-snapshot-product-name {
@@ -396,6 +396,7 @@
                 font-weight: bold;
                 line-height: 25px;
                 text-align: center;
+                float: left;
             }
             .pr-stars {
                 float: none;
@@ -435,7 +436,7 @@
                 background-image: url('../img/4.0_star.gif');
             }
             .pr-stars-4_5 {
-                width: 179px;
+                width: 158px;
 
                 background-image: url('../img/4.5_star.gif');
                 background-size: 158px 30px;
@@ -521,6 +522,7 @@
                 .pr-review-most-helpful {
                     display: none;
                 }
+
                 .pr-review-author-date {
                     float: left;
 
@@ -735,27 +737,8 @@
                 font-size: $font-size !important;
             }
 
-            .pr-other-attribute-value-histogram-wrapper {
-                display: inline-block;
-                width: 100%;
-                height: 10px;
-                margin-top: 6px;
-                margin-bottom: 3px;
-
-                + p {
-                    //font-size: 89%;
-                }
-            }
-
-            .pr-other-attribute-value-histogram-barValue {
-                height: 100%;
-
-                background-color: #5dad30;
-            }
             p {
                 display: inline-block;
-                //sfloat: left;
-
                 line-height: normal;
             }
             .pr-other-attribute-value-histogram-stats-pct {
@@ -942,6 +925,25 @@
         }
     }
 
+    .c-reviews-bellows {
+        .c-bellows__list a {
+            padding: 0;
+        }
+    }
+
+    .pr-other-attribute-value-histogram-barValue {
+        height: 100%;
+
+        background-color: #5dad30;
+    }
+
+    .pr-other-attribute-value-histogram-wrapper {
+        display: inline-block;
+        width: 100%;
+        height: 10px;
+    }
+
+
     [class*="prod_detail_reg_price"],
     .celebros_list_price {
         padding-right: 6px;
@@ -1106,6 +1108,7 @@
 
         text-decoration: underline;
     }
+
 }
 
 .t-product-layout {
