@@ -125,6 +125,26 @@ define([
         };
     };
 
+    var createSwatchesSection = function() {
+        $('.s7flyoutSwatches').addClass('c-scroller');
+        $('.s7flyoutSwatches').find('div').first().addClass('c-scroller__content').removeAttr('style');
+        $('.s7flyoutSwatches').find('div').first().find('> div').last().addClass('c-slideshow').removeAttr('style');
+        $('.c-slideshow').find('> div > div').removeAttr('style');
+        $('.s7flyoutSwatch').each(function() {
+            $(this).addClass('c-slideshow__slide');
+        });
+    };
+
+    var interceptSwatchCreation = function interceptSwatchCreation() {
+
+        var _override  = window.s7js.flyout.Swatch.prototype.onLoadComplete;
+        window.s7js.flyout.Swatch.prototype.onLoadComplete = function() {
+            var override = _override.apply(this, arguments);
+            createSwatchesSection();
+            return _override;
+        };
+    };
+
     var buildYouMayAlsoLikeCarousel = function() {
         var $container = $('.js-suggested-products');
         var $parsedProducts = [];
@@ -182,6 +202,7 @@ define([
         initAddToCartSheet();
         interceptAddToCart();
         interceptCheckAddToCart();
+        interceptSwatchCreation();
     };
 
     return productDetailsUI;
