@@ -7,6 +7,19 @@
         min-height: 300px;
     }
 
+    .c-scroller__content {
+        height: auto !important;
+    }
+
+    .c-slideshow > div {
+        position: initial !important;
+
+        > div {
+            position: relative !important;
+            display: inline;
+        }
+    }
+
     // .prod_detail_inventory {
     //     display: none;
     // }
