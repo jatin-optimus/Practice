@@ -7,6 +7,10 @@
         min-height: 300px;
     }
 
+    // .prod_detail_inventory {
+    //     display: none;
+    // }
+
     .prod_detail_preorder_inventory {
         clear: both;
 
@@ -35,7 +39,8 @@
         }
     }
 
-    .prod_detail_sale_price {
+    .prod_detail_sale_price,
+    .celebros_sale_price {
         padding-right: 6px;
 
         color: #ff2812;
@@ -924,8 +929,8 @@
         }
     }
 
-    .prod_detail_reg_price3,
-    .prod_detail_reg_price {
+    [class*="prod_detail_reg_price"],
+    .celebros_list_price {
         padding-right: 6px;
 
         color: $neutral-240;
@@ -933,7 +938,8 @@
         font-size: 15px;
     }
 
-    [class*="prod_detail_vip_price"] {
+    [class*="prod_detail_vip_price"],
+    .celebros_umap {
         color: #005cae;
         font-weight: bold;
         font-size: 15px;
