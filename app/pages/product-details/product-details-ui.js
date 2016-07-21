@@ -72,7 +72,6 @@ define([
         window.updateShoppingCartSummary = function() {
             var override = _override.apply(this, arguments);
             if ($('#addToCartButton').attr('src').indexOf('_gr.gif') >= 0) {
-                debugger;
                 $('.prod_add_to_cart').addClass('c--disabled');
             }
             var $modal = $('#addToCartInfo');
