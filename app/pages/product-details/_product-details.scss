@@ -509,6 +509,7 @@
                 .pr-review-most-helpful {
                     display: none;
                 }
+
                 .pr-review-author-date {
                     float: left;
 
@@ -723,18 +724,6 @@
                 font-size: $font-size !important;
             }
 
-            .pr-other-attribute-value-histogram-wrapper {
-                display: inline-block;
-                width: 100%;
-                height: 10px;
-                margin-top: 6px;
-                margin-bottom: 3px;
-
-                + p {
-                    //font-size: 89%;
-                }
-            }
-
             p {
                 display: inline-block;
                 line-height: normal;
@@ -933,6 +922,12 @@
         height: 100%;
 
         background-color: #5dad30;
+    }
+
+    .pr-other-attribute-value-histogram-wrapper {
+        display: inline-block;
+        width: 100%;
+        height: 10px;
     }
 
 

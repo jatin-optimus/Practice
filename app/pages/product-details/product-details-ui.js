@@ -175,24 +175,10 @@ define([
         });
     };
 
-    // var initBellows = function() {
-    //     debugger;
-    //     var $changeBellowIconItem = $('.js-product-description-bellows').find('.js-video-bellows');
-    //     var $icon = $changeBellowIconItem.find('.c-icon');
-    //     if ($changeBellowIconItem.hasClass('bellows--is-open')) {
-    //         $icon.attr('data-fallback', 'img/png/collapse.png');
-    //         $icon.find('title').text('collapse');
-    //         $icon.find('use').attr('xlink:href', '#icon-collapse');
-    //     }
-    // };
-
-
-
     var productDetailsUI = function() {
         buildYouMayAlsoLikeCarousel();
         reviewSection();
         bindEvents();
-
         initAddToCartSheet();
         interceptAddToCart();
         interceptCheckAddToCart();
