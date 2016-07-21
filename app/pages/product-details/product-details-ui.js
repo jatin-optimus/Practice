@@ -66,9 +66,7 @@ define([
         });
 
         // Opening the video bellow by default to match mock.
-        $('.js-product-description-bellows').bellows('open', 0);
-
-
+        // $('.js-product-description-bellows').bellows('open', 0);
     };
 
     var initBellows = function() {
