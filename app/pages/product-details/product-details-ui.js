@@ -82,7 +82,6 @@ define([
             }
         });
     };
-    
     // SetTimeout is used because the video bello has been opened
     // just as the pageload and was takibg some time to chage the icon and holding it.
 
