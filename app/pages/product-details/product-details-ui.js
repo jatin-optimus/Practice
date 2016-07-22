@@ -12,7 +12,6 @@ define([
     'scrollTo'
 ], function($, ScrollerTemplate, Utils, Magnifik, translator, Hijax, bellows, sheet, ScrollerTmpl, reviewsUI, scrollTo) {
     var $addToCartPinny = $('.js-added-to-cart-pinny');
-    var $wishlistShade = $('.js-wishlist-shade');
 
     var reviewSection = function() {
         reviewsUI.addNoRatingsSection();
@@ -67,6 +66,8 @@ define([
 
         // Opening the video bellow by default to match mock.
         // $('.js-product-description-bellows').bellows('open', 0);
+
+
     };
 
     var initBellows = function() {
@@ -127,9 +128,10 @@ define([
         $('.s7flyoutSwatches').addClass('c-scroller');
         $('.s7flyoutSwatches').find('div').first().addClass('c-scroller__content').removeAttr('style');
         $('.s7flyoutSwatches').find('div').first().find('> div').last().addClass('c-slideshow').removeAttr('style');
-        $('.c-slideshow').find('> div > div').removeAttr('style');
         $('.s7flyoutSwatch').each(function() {
             $(this).addClass('c-slideshow__slide');
+            $(this).parent().addClass('c-swatches').removeAttr('style');
+            $('.c-swatches').parent().removeAttr('style');
         });
     };
 
@@ -183,8 +185,7 @@ define([
         sheet.init($addToCartPinny, {
             zIndex: 2000,
             shade: {
-                zIndex: 1999,
-                cssClass: 'js-wishlist-shade'
+                zIndex: 1999
             },
             closed: function() {
                 $('#addToCartInfo_mask').css('display', 'none');
