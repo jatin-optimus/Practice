@@ -92,7 +92,7 @@ define([
         $('body').on('click', '.c-overallRating', function() {
             var $reviewsBellows = $('.c-reviews-bellow');
             // Scroll to Reviews Bellows
-            $.scrollTo($reviewBellows);
+            // $.scrollTo($reviewBellows);
             // Open Bellows for Reviews
             // This is required as SVG icon was not changing on call of Bellows open method
             if (!$reviewsBellows.hasClass('bellows--is-open')) {
