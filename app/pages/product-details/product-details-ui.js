@@ -65,11 +65,11 @@ define([
             $closeButton.click();
         });
 
-        // Opening the video bellow by default to match mock.
-        $('.js-product-description-bellows').bellows('open', 0);
-
-
     };
+
+    //
+    // // Opening the video bellow by default to match mock.
+    // $('.js-product-description-bellows').bellows('open', 0);
 
     var initBellows = function() {
         $('.c-bellows__item').map(function(_, item) {
@@ -82,7 +82,7 @@ define([
             }
         });
     };
-    // SetTimeout is used because the video bello has been opened
+    // SetTimeout is used because the video bellow has been opened
     // just as the pageload and was takibg some time to chage the icon and holding it.
 
     setTimeout(initBellows, 500);
