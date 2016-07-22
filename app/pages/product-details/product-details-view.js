@@ -36,6 +36,8 @@ function($, BaseView, template) {
             content: $('#grp_2'),
         });
         _items.push({
+            bellowsItemClass: 'c-need-help-bellow',
+            bellowsHeaderClass: 'c-need-help-heading',
             sectionTitle: $('#grp_4Tab').text(),
             content: $('#grp_4')
         });

@@ -11,13 +11,42 @@
         height: auto !important;
     }
 
-    .c-slideshow > div {
-        position: initial !important;
-
+    .c-slideshow {
         > div {
             position: relative !important;
             display: inline;
         }
+    }
+
+    .c-need-help-bellow {
+        img {
+            height: 23px;
+        }
+    }
+
+    .c-need-help-heading {
+        color: #078ac0;
+    }
+
+    .bellows__content h2 {
+        color: #333;
+    }
+
+    .bellows__content a {
+        color: #0052ae;
+    }
+
+    .bellows__content h2 .prod_redtext {
+        display: inline-block;
+        margin-top: 5px;
+        margin-bottom: 25px;
+
+        color: #ff2812;
+        font-weight: 600;
+    }
+
+    #grp_1 > h2:first-child {
+        display: none;
     }
 
     // .prod_detail_inventory {
@@ -1035,6 +1064,7 @@
 
             &.c--disabled {
                 opacity: 0.4;
+                pointer-events: none;
             }
         }
     }
