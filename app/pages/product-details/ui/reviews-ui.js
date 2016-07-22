@@ -34,6 +34,8 @@ function($) {
             $previous.find('a').text('Back');
         }
     };
+
+
     var addNoRatingsSection = function() {
         setTimeout(function() {
             if ($('.pr-snapshot-no-ratings') === null) {

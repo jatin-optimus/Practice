@@ -420,6 +420,45 @@
         p.pr-snippet-review-count {
             font-size: $font-size;
         }
+
+        .pr-review-sort-box {
+            margin-bottom: $unit;
+
+            label {
+                float: right;
+            }
+
+        }
+
+        .pr-review-sort-box,
+        .pr-pagination-bottom {
+            position: relative;
+
+            width: 100%;
+
+            select {
+                height: 41px;
+                padding: 0;
+                border: 1px solid #bbb;
+
+                border-radius: 2.5px;
+                background: linear-gradient(to bottom, #f7f7f7, #eee);
+                outline: none;
+
+                line-height: 20px;
+                text-align: right;
+
+                -webkit-appearance: none;
+
+                &:focus,
+                &:active {
+                    border-color: #bbb;
+
+                    outline: none;
+                }
+            }
+        }
+
         .pr-snapshot-rating {
             margin-top: 9px;
             margin-bottom: 12px;
@@ -490,33 +529,7 @@
                 background-image: url('../img/5.0_star.gif');
             }
         }
-        .pr-review-sort-box,
-        .pr-pagination-bottom {
-            position: relative;
 
-            width: 100%;
-
-            select {
-                height: 41px;
-                padding: 0;
-                border: 1px solid #bbb;
-
-                border-radius: 2.5px;
-                background: linear-gradient(to bottom, #f7f7f7, #eee);
-                outline: none;
-
-                line-height: 20px;
-
-                -webkit-appearance: none;
-
-                &:focus,
-                &:active {
-                    border-color: #bbb;
-
-                    outline: none;
-                }
-            }
-        }
         .pr-review-points,
         .pr-other-attributes,
         .pr-pagination-top {
