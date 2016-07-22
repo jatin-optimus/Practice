@@ -94,11 +94,15 @@ define([
             var $modal = $('#addToCartInfo');
             var $content = $('#addToCartInfoCont');
             $content.find('#continueShoppingLink').insertAfter('#viewCartLink');
+            $modal.find('#addToCartInfoTitle').addClass('c-added-to-cart-msg')
+                .insertBefore($content.find('#addToCartInfoMsg'));
             $modal.addClass('u-visually-hidden');
-            $addToCartPinny.find('.c-sheet__title').html('Added to Cart');
+            $addToCartPinny.find('.c-sheet__title').html(translator.translate('added_to_cart'));
             $addToCartPinny.find('.js-added-to-cart-pinny__body').html($content);
             $addToCartPinny.find('.pinny__close').addClass('container-close');
             if (!$addToCartPinny.hasClass('js-rendered')) {
+                $addToCartPinny.find('#addToCartInfoTitle')
+                    .html($addToCartPinny.find('#addToCartInfoTitle').html().replace('Great Choice!', '<b>Great Choice!</b>'));
                 $addToCartPinny.pinny('open');
             }
             $addToCartPinny.addClass('js-rendered');
@@ -147,7 +151,7 @@ define([
     var buildYouMayAlsoLikeCarousel = function() {
         var $container = $('.js-suggested-products');
         var $parsedProducts = [];
-        var $heading = $('<h2 class="c-carousel__title">').text('You May Also Like');
+        var $heading = $('<h2 class="c-carousel__title">').text(translator.translate('you_may_also_like'));
         var productTileData = [];
         setTimeout(function() {
             if ($('#PRODPG1_cm_zone').children().length === 0) {

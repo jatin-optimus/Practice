@@ -3,6 +3,26 @@
 //
 
 .t-product-details {
+    .c-added-to-cart-msg {
+        position: relative;
+
+        display: flex;
+        align-items: center;
+        height: 45px;
+        padding: 0 0 0 40px;
+
+        background-color: #d8f6c8;
+        background-image: url('../img/greatchoiceICon.png');
+        background-repeat: no-repeat;
+        background-position: 10px 10px;
+        background-size: 25px 25px;
+
+        font-size: 12px;
+
+        b {
+            font-size: 14px;
+        }
+    }
     #scene7DHTMLViewerFlyout {
         min-height: 300px;
     }
@@ -1108,6 +1128,12 @@
 }
 
 .c-added-to-cart-pinny__body {
+    #addToCartVIPMsg {
+        overflow: hidden;
+        margin-top: 1px;
+        padding: 7px 8px 8px 10px;
+        border-bottom: 1px solid #dadada;
+    }
     .satisfactionGuaranteeMsg {
         display: none;
     }
@@ -1182,6 +1208,10 @@
 
 #addToCartInfoMsg {
     display: flex;
+    margin: 0 10px !important;
+    padding: 9px 10px 10px 10px;
+
+    box-shadow: 0 2px 1px #dadada;
 }
 
 .addToCartInfoMsgCon {

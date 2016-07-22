@@ -158,6 +158,11 @@
         "items": "items",
         "no_items_msg": "There are currently no products assigned to this registry.",
         "viewcart_checkout_button": "View Cart/Checkout",
-        "date_added": "Date added:"
+        "date_added": "Date added:",
+        "size_chart": "Size Chart",
+        "read_reviews": "Read Reviews",
+        "added_to_cart": "Added to Cart",
+        "you_may_also_like": "You May Also Like",
+        "add_to_cart": "add to cart"
     }
 }
