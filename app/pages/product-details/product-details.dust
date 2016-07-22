@@ -49,7 +49,7 @@
             </div>
     </div>
     {>"components/sheet/sheet" effect="sheetBottom" class="js-added-to-cart-pinny" headerClass="u-border-bottom-light-grey" bodyClass="js-added-to-cart-pinny__body c-added-to-cart-pinny__body" coverage="100%"  isHeader="true"/}
-
+    <a class="c-temp-review-pagination-anchor" hidden></a>
     <div class="c-back-to-top">
         <a href="#" >Back to Top <img src="{@getUrl path="img/back-to-top.png" /}"></a>
     </div>
