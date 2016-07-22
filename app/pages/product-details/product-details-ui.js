@@ -19,6 +19,13 @@ define([
         reviewsUI.updatePaginationButtons();
     };
 
+    // Updation of reviews on pagination handling
+    var updateReviewsSection = function() {
+        reviewsUI.createPaginationDropDown();
+        reviewsUI.reviewPaginationDropDownChangeFunc();
+    };
+
+
     var bindEvents = function() {
         $('body').on('click', '.pr-page-next', function() {
             setTimeout(function() {
@@ -62,6 +69,10 @@ define([
         $('body').on('click', '#continueShoppingLink', function() {
             var $closeButton = $addToCartPinny.find('.pinny__close');
             $closeButton.click();
+        });
+
+        $('body').on('click', '.pr-page-next, .pr-page-prev', function() {
+            $.scrollTo($('.js-reviews-bellows'));
         });
     };
 
@@ -198,6 +209,7 @@ define([
         interceptCheckAddToCart();
         interceptSwatchCreation();
         initBellows();
+        updateReviewsSection();
     };
 
     return productDetailsUI;
