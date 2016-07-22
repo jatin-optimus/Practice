@@ -14,7 +14,16 @@
     .c-slideshow {
         .c-swatches {
             position: relative !important;
+
             display: inline;
+        }
+
+        .s7flyoutSwatchActiveBorder {
+            border-width: 2px;
+            border-style: solid;
+            border-color: #0097c1;
+
+            opacity: 0.9;
         }
     }
 
@@ -301,6 +310,12 @@
         }
     }
 
+    #ref2QIColorCont a.ref2Selected {
+        border: 1px solid #f60;
+
+        background-color: #ff8413;
+    }
+
     .ref2OnSaleTitle {
         position: relative;
         top: 3px;
@@ -412,6 +427,8 @@
                 display: none;
             }
             span.pr-rating {
+                float: left;
+
                 display: inline-block;
                 width: 50px;
                 height: 25px;
@@ -425,7 +442,6 @@
                 font-weight: bold;
                 line-height: 25px;
                 text-align: center;
-                float: left;
             }
             .pr-stars {
                 float: none;
@@ -768,6 +784,7 @@
 
             p {
                 display: inline-block;
+
                 line-height: normal;
             }
             .pr-other-attribute-value-histogram-stats-pct {
@@ -1049,6 +1066,7 @@
 
             &.c--disabled {
                 opacity: 0.4;
+
                 pointer-events: none;
             }
         }
@@ -1138,7 +1156,6 @@
 
         text-decoration: underline;
     }
-
 }
 
 .t-product-layout {
