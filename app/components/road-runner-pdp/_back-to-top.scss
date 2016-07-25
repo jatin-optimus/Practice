@@ -1,0 +1,18 @@
+.c-back-to-top > a > img {
+    position: relative;
+    top: 4px;
+
+    max-width: 17px;
+}
+.c-back-to-top {
+    text-align: center;
+}
+
+.c-back-to-top > a {
+    display: inline-block;
+    padding: 20px 0 15px 0;
+
+    color: #464749;
+    font-weight: bold;
+    vertical-align: middle;
+}

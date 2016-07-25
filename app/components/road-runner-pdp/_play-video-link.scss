@@ -1,0 +1,30 @@
+.c-main-container {
+    position: relative;
+    > div {
+        width: 100% !important;
+        height: auto !important;
+    }
+    #videoLinkButton + div {
+        position: initial !important;
+
+        padding-left: 12px !important;
+    }
+}
+
+#videoLinkButton {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    img {
+        max-width: 85px;
+        max-height: 85px;
+    }
+}
+.c-video-tab center > div {
+    width: 100% !important;
+}
+
+.c-video-tab center {
+    overflow: hidden;
+}

@@ -1,0 +1,110 @@
+.c-added-to-cart-msg {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    height: 45px;
+    padding: 0 0 0 40px;
+
+    background-color: #d8f6c8;
+    background-image: url('../img/greatchoiceICon.png');
+    background-repeat: no-repeat;
+    background-position: 10px 10px;
+    background-size: 25px 25px;
+
+    font-size: 12px;
+
+    b {
+        font-size: 14px;
+    }
+}
+#addToCartInfoMsg {
+    display: flex;
+    margin: 0 10px !important;
+    padding: 9px 10px 10px 10px;
+
+    box-shadow: 0 2px 1px #dadada;
+}
+
+.addToCartInfoMsgCon {
+    width: 38%;
+}
+
+.c-added-to-cart-pinny__body {
+    #addToCartVIPMsg {
+        overflow: hidden;
+        margin-top: 1px;
+        padding: 7px 8px 8px 10px;
+        border-bottom: 1px solid #dadada;
+    }
+    .satisfactionGuaranteeMsg {
+        display: none;
+    }
+
+    .nonvip {
+        float: left;
+
+        width: 75%;
+
+        font-size: 12px;
+    }
+
+    .addToCartVIPMsgCont {
+        overflow: hidden;
+        padding: 12px 0;
+    }
+
+    #continueShoppingLink {
+        width: 100%;
+
+        text-align: center;
+    }
+
+    .addToCartVIPMsgCont img {
+        height: 28px;
+
+        transform: rotate(-10deg);
+    }
+
+    [id="viewCartLink"] div img {
+        display: none;
+    }
+
+    [id="viewCartLink"] {
+        overflow: hidden;
+        height: 40px;
+        margin: 21px 10px 0 10px;
+
+        border-radius: 2.5px;
+        background: linear-gradient(to bottom, #52b21c, #4aa914);
+
+        line-height: 40px;
+    }
+
+
+    #viewCartLink a:after {
+        content: 'View Cart';
+    }
+
+    [id="viewCartLink"] div {
+        float: none !important;
+    }
+
+    [id="viewCartLink"] div a {
+        display: block;
+
+        color: #fff;
+        text-align: center;
+    }
+
+    #continueShoppingLink .prod_body {
+        display: block;
+        margin-top: 8px;
+
+        text-decoration: underline;
+    }
+}
+
+#scene7DHTMLViewerFlyout {
+    min-height: 300px;
+}
