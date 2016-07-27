@@ -1,10 +1,10 @@
 .c-overallRating {
     float: right;
 
-    margin-top: 6px;
+    margin-top: $sub-unit;
 
     .pr-snippet-link {
-        color: #0a64a3;
+        color: $neutral-190;
         font-size: 11px;
     }
 
@@ -47,7 +47,7 @@
 
         .pr-snippet-link {
             display: inline-block;
-            border-bottom: 1px solid #0a64a3;
+            border-bottom: 1px solid $neutral-190;
         }
     }
     .pr-stars {

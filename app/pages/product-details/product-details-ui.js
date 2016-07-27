@@ -14,6 +14,7 @@ define([
 ], function($, ScrollerTemplate, Utils, Magnifik, translator, Hijax, bellows, sheet, ScrollerTmpl, reviewsUI, scrollTo, LoadingTemplate) {
     var $addToCartPinny = $('.js-added-to-cart-pinny');
     var $reviewBellow = $('.c-reviews-bellows');
+    var $videoBellows = $('.js-video-bellows');
 
     var reviewSection = function() {
         reviewsUI.addNoRatingsSection();
@@ -32,6 +33,8 @@ define([
         reviewsUI.addNoRatingsSection();
         reviewsUI.updatePaginationButtons();
         reviewsUI.transformSortBy();
+        // reviewsUI.createPaginationDropDown();
+        // reviewsUI.reviewPaginationDropDownChangeFunc();
         reviewsUI.reviewPaginationDropDownChangeFunc();
     };
 
@@ -39,29 +42,6 @@ define([
     // Handling click functionality
     var bindEvents = function() {
         $('body').on('click', '.pr-page-next, .pr-page-prev', function() {
-            setTimeout(function() {
-                updateReviewsSection();
-                $.scrollTo($reviewBellow);
-            }, 1000);
-        });
-
-        $('.c-review-page-dropdown').on('change', function() {
-            var value = $(this).val();
-            var $paginationWrapper = $('.pr-pagination-bottom');
-            var text = $paginationWrapper.find('.pr-page-nav a').attr('onclick');
-            var parts = text.split('getReviewsFromMeta(');
-            var secondpart = parts[1].split(/,(.+)?/)[1];
-            var newLink = parts[0] + 'getReviewsFromMeta(' + value + ',' + secondpart;
-            $('.c-temp-review-pagination-anchor').attr('onclick', newLink);
-            $('.c-temp-review-pagination-anchor').click();
-            setTimeout(function() {
-                updateReviewsSection();
-                $.scrollTo($reviewBellow);
-            }, 1000);
-        });
-
-
-        $('body').on('click', '.pr-page-prev', function() {
             setTimeout(function() {
                 updateReviewsSection();
                 $.scrollTo($reviewBellow);
@@ -79,24 +59,41 @@ define([
             }, 500);
         });
 
-        // $('body').on('click', '#videoLinkButton', function() {
-        //     // Scroll to Reviews Bellows
-        //     $.scrollTo($videoBellows);
-        //     // Open Bellows for Video
-        //     // This is required as SVG icon was not changing on call of Bellows open method
-        //     if (!$videoBellows.hasClass('bellows--is-open')) {
-        //         $videoBellows.find('.bellows__header').click();
-        //     }
-        // });
+        $('.c-review-page-dropdown').on('change', function() {
+            reviewsUI.reviewPaginationDropDownChangeFunc();
+            setTimeout(function() {
+                $.scrollTo($reviewBellow);
+            }, 1000);
+        });
+
+        $('body').on('click', '#videoLinkButton', function() {
+            // Scroll to Reviews Bellows
+            $.scrollTo($videoBellows);
+            // Open Bellows for Video
+            // This is required as SVG icon was not changing on call of Bellows open method
+            if (!$videoBellows.hasClass('bellows--is-open')) {
+                $videoBellows.find('.bellows__header').click();
+            }
+        });
+
+
+        $('.c-review-page-dropdown').on('change', function() {
+            reviewsUI.reviewPaginationDropDownChangeFunc();
+            setTimeout(function() {
+                $.scrollTo($reviewBellow);
+            }, 1000);
+        });
 
         $('body').on('click', '.c-overallRating', function() {
             var $reviewsBellows = $('.c-reviews-bellow');
             // Scroll to Reviews Bellows
-            // $.scrollTo($reviewBellows);
-            // Open Bellows for Reviews
-            // This is required as SVG icon was not changing on call of Bellows open method
-            if (!$reviewsBellows.hasClass('bellows--is-open')) {
-                $reviewsBellows.find('.bellows__header').click();
+            $.scrollTo($reviewBellow);
+            $reviewBellow.addClass('bellows--is-open');
+            var $icon = $reviewBellow.find('.c-icon');
+            if ($reviewBellow.hasClass('bellows--is-open')) {
+                $icon.attr('data-fallback', 'img/png/collapse.png');
+                $icon.find('title').text('collapse');
+                $icon.find('use').attr('xlink:href', '#icon-collapse');
             }
         });
     };
@@ -225,17 +222,57 @@ define([
         });
     };
 
+    var centerZoomImg = function() {
+        var $zoomImg = $('.js-magnifik-image');
+        var loaded = function() {
+            var width = $('.c-magnifik').prop('offsetWidth') / 2;
+            $('.c-loading').hide();
+            $zoomImg.fadeIn();
+            $('.c-magnifik').prop('scrollLeft', width);
+        };
+
+        if ($zoomImg[0].complete) {
+            loaded();
+        } else {
+            $zoomImg[0].addEventListener('load', loaded);
+        }
+    };
+
+    var magnifikPinny = function() {
+        var $magnificPinnyEl = $('.js-magnifik');
+        var magnificPinny = sheet.init($magnificPinnyEl, {
+            shade: {
+                opacity: 0.95,
+                color: '#fff',
+                zIndex: 2
+            },
+            open: function() {
+                var imgSrc = $('.s7flyoutFlyoutView img').attr('src');
+                $('.js-magnifik-image').attr('src', imgSrc);
+                $('.js-magnifik-image').hide();
+                $('.c-loading').show();
+            },
+            opened: function() {
+                centerZoomImg();
+            }
+        });
+
+        $('body').on('click', '.c-zoom-icon', function(e) {
+            magnificPinny.open();
+        });
+    };
+
     var productDetailsUI = function() {
+        bindEvents();
         buildYouMayAlsoLikeCarousel();
         reviewSection();
-        bindEvents();
         initAddToCartSheet();
         interceptAddToCart();
         interceptCheckAddToCart();
         interceptSwatchCreation();
         initBellows();
         updateReviewsSection();
+        setTimeout(magnifikPinny, 500);
     };
-
     return productDetailsUI;
 });

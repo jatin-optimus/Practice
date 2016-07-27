@@ -2,9 +2,10 @@ define([
     '$',
     'global/baseView',
     'dust!pages/product-details/product-details',
-    'translator'
+    'translator',
+    'dust!components/loading/loading'
 ],
-function($, BaseView, template, translator) {
+function($, BaseView, template, translator, LoadingTemplate) {
 
 
     var getProductSwatches = function($container) {
@@ -115,6 +116,15 @@ function($, BaseView, template, translator) {
                 $rating.find('.pr-snippet-link').text(translator.translate('read_reviews'));
                 $rating.find('.pr-snippet-write-review').addClass('u-visually-hidden');
                 return $rating;
+            },
+            magnifikImage: function(context) {
+                var $container;
+                new LoadingTemplate(true, function(err, html) {
+                    $container = $(html);
+                });
+                return {
+                    bodyContent: $($container[0].outerHTML + '<img class="js-magnifik-image c-magnifik-image" src=""/>')
+                };
             }
         }
 

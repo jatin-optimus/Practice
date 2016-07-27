@@ -94,22 +94,25 @@ function($) {
         return currentPage;
     };
     var createPaginationDropDown = function() {
+        var totalReviewCount;
+        var $paginationWrapper;
+        var totalPages;
+        var options = [];
+        var currentPage;
+        var $select;
+        var $dropDownContainer;
         if ($('.pr-page-nav').html() === null) {
             return;
         }
-        var totalReviewCount = $reviewBellow.find('.c-bellows__header').text();
-        totalReviewCount = totalReviewCount.slice(totalReviewCount.indexOf('(') + 1, totalReviewCount.indexOf(')'));
-
-        var $paginationWrapper = $('#reviewsTabCon');
-        var perPageCount = $paginationWrapper.find('.pr-pagination-top .pr-page-count strong').text();
-        perPageCount = perPageCount.split('-')[1];
-        var totalPages = Math.ceil(totalReviewCount / 30);
+        totalReviewCount = $reviewBellow.find('.pr-review-count').text();
+        totalReviewCount = (/\d+/g).exec(totalReviewCount)[0];
+        $paginationWrapper = $('#reviewsTabCon');
+        totalPages = Math.ceil(totalReviewCount / 30);
         if (totalPages === 1) {
             return;
         }
-        var options = [];
-        var $select = $('<select class="c-review-page-dropdown"></select>');
-        var currentPage = getCurentPage($paginationWrapper);
+        $select = $('<select class="c-review-page-dropdown"></select>');
+        currentPage = getCurentPage($paginationWrapper);
         for (var i = 1; i <= totalPages; i++) {
             var text = 'Page ' + i + ' of ' + totalPages;
             if (currentPage === i) {
@@ -118,7 +121,7 @@ function($) {
                 $select.append('<option value=' + i + '>' + text + '</option>');
             }
         }
-        var $dropDownContainer = $('<div class="c-review-dropdown"></div>');
+        $dropDownContainer = $('<div class="c-review-dropdown"></div>');
         $dropDownContainer.append($select);
         $('.pr-pagination-bottom').append($dropDownContainer);
     };
@@ -132,9 +135,14 @@ function($) {
             var newLink = parts[0] + 'getReviewsFromMeta(' + value + ',' + secondpart;
             $('.c-temp-review-pagination-anchor').attr('onclick', newLink);
             $('.c-temp-review-pagination-anchor').click();
+            setTimeout(function() {
+                changeHeadingPosition();
+                updatePaginationButtons();
+                transformSortBy();
+                createPaginationDropDown();
+            }, 1000);
         });
     };
-
     return {
         changeHeadingPosition: changeHeadingPosition,
         updatePaginationButtons: updatePaginationButtons,

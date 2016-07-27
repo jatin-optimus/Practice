@@ -1,9 +1,9 @@
-.ref2OnSaleTitle {
+[class="ref2OnSaleTitle"] {
     position: relative;
     top: 3px;
     clear: both;
 
-    color: #ff3112;
+    color: $neutral-280;
     font-weight: bold;
     font-size: 10px;
     text-align: center;
@@ -14,16 +14,16 @@
     padding: $sub-unit;
     padding-top: 2px;
 
-    color: #464749;
+    color: $neutral-290;
     font-family: verdana;
-    font-size: 12px;
+    font-size: $smaller-font-size;
     text-shadow: 0 1px #eae7e7;
 }
 
 .prod_select_title {
     padding-right: 6px;
 
-    color: #464749;
+    color: $neutral-290;
     font-weight: bold;
     font-size: 15px;
 }

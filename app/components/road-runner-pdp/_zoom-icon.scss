@@ -1,0 +1,19 @@
+.c-zoom-icon {
+    position: absolute;
+    right: $unit*2;
+    bottom: 26%;
+
+    padding-left: $unit + $sub-unit;
+
+    background-image: url('../img/zoomIconBlue.png');
+    background-repeat: no-repeat;
+    background-position: 2px $unit/3;
+    background-size: $unit $unit;
+
+    color: $neutral-400;
+    font-weight: bold;
+}
+
+.c-magnifik-image {
+    max-width: 200% !important;
+}

@@ -6,61 +6,61 @@
     height: 45px;
     padding: 0 0 0 40px;
 
-    background-color: #d8f6c8;
+    background-color: $neutral-410;
     background-image: url('../img/greatchoiceICon.png');
     background-repeat: no-repeat;
     background-position: 10px 10px;
     background-size: 25px 25px;
 
-    font-size: 12px;
+    font-size: $smaller-font-size;
 
     b {
         font-size: 14px;
     }
 }
-#addToCartInfoMsg {
+[id="addToCartInfoMsg"] {
     display: flex;
     margin: 0 10px !important;
     padding: 9px 10px 10px 10px;
 
-    box-shadow: 0 2px 1px #dadada;
+    box-shadow: 0 2px 1px $neutral-440;
 }
 
-.addToCartInfoMsgCon {
+[class="addToCartInfoMsgCon"] {
     width: 38%;
 }
 
 .c-added-to-cart-pinny__body {
-    #addToCartVIPMsg {
+    [id="addToCartVIPMsg"] {
         overflow: hidden;
         margin-top: 1px;
         padding: 7px 8px 8px 10px;
-        border-bottom: 1px solid #dadada;
+        border-bottom: 1px solid $neutral-440;
     }
-    .satisfactionGuaranteeMsg {
+    [class="satisfactionGuaranteeMsg"] {
         display: none;
     }
 
-    .nonvip {
+    [class="nonvip"] {
         float: left;
 
         width: 75%;
 
-        font-size: 12px;
+        font-size: $smaller-font-size;
     }
 
-    .addToCartVIPMsgCont {
+    [class="addToCartVIPMsgCont"] {
         overflow: hidden;
         padding: 12px 0;
     }
 
-    #continueShoppingLink {
+    [id="continueShoppingLink"] {
         width: 100%;
 
         text-align: center;
     }
 
-    .addToCartVIPMsgCont img {
+    [class="addToCartVIPMsgCont"] img {
         height: 28px;
 
         transform: rotate(-10deg);
@@ -82,7 +82,7 @@
     }
 
 
-    #viewCartLink a:after {
+    [id="viewCartLink"] a:after {
         content: 'View Cart';
     }
 
@@ -93,11 +93,11 @@
     [id="viewCartLink"] div a {
         display: block;
 
-        color: #fff;
+        color: $white;
         text-align: center;
     }
 
-    #continueShoppingLink .prod_body {
+    [id="continueShoppingLink"] .prod_body {
         display: block;
         margin-top: 8px;
 
@@ -105,6 +105,6 @@
     }
 }
 
-#scene7DHTMLViewerFlyout {
+[id="scene7DHTMLViewerFlyout"] {
     min-height: 300px;
 }

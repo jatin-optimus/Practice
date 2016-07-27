@@ -1,10 +1,10 @@
 .c-fit-tip {
-    margin-left: 5px;
-    padding: 0 12px !important;
+    margin-left: $sub-unit;
+    padding: 0 $unit !important;
 
-    color: #333;
+    color: $neutral-240;
     font-family: verdana;
-    font-size: 12px;
+    font-size: $smaller-font-size;
 
     > div {
         display: none;
