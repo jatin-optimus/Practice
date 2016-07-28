@@ -3,9 +3,10 @@ define([
 ],
 function($) {
     var $reviewBellow = $('.c-reviews-bellows');
+
     var changeHeadingPosition = function() {
-        var $heading, $container;
-        $container = $('#reviewsTabCon').find('.pr-review-wrap');
+        var $heading;
+        var $container = $('#reviewsTabCon').find('.pr-review-wrap');
         if ($container === null) {
             changeHeadingPosition();
         } else {
@@ -16,6 +17,7 @@ function($) {
             });
         }
     };
+
     var updatePaginationButtons = function() {
         var $pagination = $('.pr-pagination-bottom');
         var $next = $pagination.find('.pr-page-next');
@@ -33,6 +35,7 @@ function($) {
             $previous.find('a').text('Back');
         }
     };
+
     var addNoRatingsSection = function() {
         setTimeout(function() {
             if ($('.pr-snapshot-no-ratings') === null) {
@@ -42,6 +45,7 @@ function($) {
             }
         }, 500);
     };
+
     var createRangeInReview = function() {
         var $container = $('<div class="c-review-ranges"></div>');
 
@@ -77,10 +81,12 @@ function($) {
             $parent.find('.c-all-range, .c-max-range, .c-range-see-all, .c-range-see-less').toggle();
         });
     };
+
     var transformSortBy = function() {
         var $sortBy = $('.pr-review-sort-box');
         $sortBy.find('label').text('Sort By:');
     };
+
     var getCurentPage = function(paginationWrapper) {
         var $paginationWrapper = paginationWrapper.find('.pr-pagination-bottom');
         var $prev = $paginationWrapper.find('.pr-page-prev');
@@ -93,6 +99,7 @@ function($) {
         }
         return currentPage;
     };
+
     var createPaginationDropDown = function() {
         var totalReviewCount;
         var $paginationWrapper;
@@ -100,7 +107,7 @@ function($) {
         var options = [];
         var currentPage;
         var $select;
-        var $dropDownContainer;
+        var $dropDownContainer = $('<div class="c-review-dropdown"></div>');
         if ($('.pr-page-nav').html() === null) {
             return;
         }
@@ -121,10 +128,10 @@ function($) {
                 $select.append('<option value=' + i + '>' + text + '</option>');
             }
         }
-        $dropDownContainer = $('<div class="c-review-dropdown"></div>');
         $dropDownContainer.append($select);
         $('.pr-pagination-bottom').append($dropDownContainer);
     };
+
     var reviewPaginationDropDownChangeFunc = function() {
         $('.c-review-page-dropdown').on('change', function() {
             var value = $(this).val();
@@ -143,6 +150,7 @@ function($) {
             }, 1000);
         });
     };
+
     return {
         changeHeadingPosition: changeHeadingPosition,
         updatePaginationButtons: updatePaginationButtons,

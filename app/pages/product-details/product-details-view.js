@@ -66,19 +66,24 @@ function($, BaseView, template, translator, LoadingTemplate) {
                 $title.find('span').removeAttr('style');
                 return $title;
             },
+
             productId: function() {
                 return $('.prod_itemid').text();
             },
+
             priceSection: function() {
                 return $('.prodOverview1').find('.prod_select_title3');
             },
+
             productDescriptionTabs: function() {
                 return getProductDescriptonTabs();
             },
+
             shopRunner: function() {
                 var $shopRunnerSection = $('#srd_pd');
                 return $shopRunnerSection;
             },
+
             steps: function() {
                 var $form = $('#addToCartForm');
                 $form.find('#addToCartLink').append(translator.translate('add_to_cart'));
@@ -89,6 +94,7 @@ function($, BaseView, template, translator, LoadingTemplate) {
                     addToCart: $form.find('.addToCartCon')
                 };
             },
+
             imageSection: function() {
                 var $imageSection = $('#scene7DHTMLViewerFlyout').parent();
                 $imageSection.find('br').remove();
@@ -99,24 +105,30 @@ function($, BaseView, template, translator, LoadingTemplate) {
                 }
                 return $imageSection;
             },
+
             price: function() {
                 return $('#ref2QIPriceTitleS');
             },
+
             addToCartDiv: function() {
                 return $('#addToCartInfo');
             },
+
             cartSummary: function() {
                 return $('#shoppingCartSummaryNew');
             },
+
             youMayLikeCarousel: function() {
                 return $('#pdetails_suggestions');
             },
+
             overallRating: function() {
                 var $rating = $('.pr-snippet');
                 $rating.find('.pr-snippet-link').text(translator.translate('read_reviews'));
                 $rating.find('.pr-snippet-write-review').addClass('u-visually-hidden');
                 return $rating;
             },
+
             magnifikImage: function(context) {
                 var $container;
                 new LoadingTemplate(true, function(err, html) {
@@ -127,10 +139,5 @@ function($, BaseView, template, translator, LoadingTemplate) {
                 };
             }
         }
-
-        /**
-         * If you wish to override preProcess/postProcess in this view, have a look at the documentation:
-         * http://adaptivejs.mobify.com/v1.0/docs/views
-         */
     };
 });

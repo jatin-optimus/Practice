@@ -2,10 +2,11 @@
 // ===
 //
 .t-product-details-page {
-    padding: 12px;
-    background-color: #dadada;
+    padding: $unit;
+
+    background-color: $neutral-440;
     .c-produt-selection-container {
-        padding: 0 12px;
+        padding: 0 $unit;
     }
 }
 
@@ -14,15 +15,13 @@
 }
 
 .t-product-details {
-
     .prod_detail_sale_price,
     .celebros_sale_price {
         margin-bottom: 2px;
-        padding-right: 6px;
+        padding-right: $unit/2;
 
-        color: #ff2812;
+        color: $neutral-330;
         font-weight: bold;
         text-transform: uppercase;
     }
-
 }

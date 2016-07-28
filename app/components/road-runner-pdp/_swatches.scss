@@ -6,7 +6,7 @@
     display: inline-block;
     width: 100%;
     height: auto !important;
-    margin-bottom: 5px;
+    margin-bottom: $sub-unit - 1;
 
     text-align: left;
 }
@@ -33,7 +33,7 @@
     display: inline-block;
     width: 295px;
     height: 235px;
-    margin-top: 13px;
+    margin-top: $unit+1;
 }
 
 .s7flyoutSwatches .s7flyoutSwatch {
@@ -45,24 +45,24 @@
 
 .c-swatches-heading {
     width: 100%;
-    margin: 12px 0;
-    margin-bottom: 20px;
-    padding: 10px;
-    padding: 9px 11px;
+    margin: $unit 0;
+    margin-bottom: $unit + 8;
+    padding: $unit - 2;
+    padding: 9px $unit;
 
-    background: #eee;
+    background: $neutral-40;
     background-image: url('../img/allBrandTab.png');
     background-size: cover;
 
     color: $neutral-290;
     font-family: verdana !important;
     font-weight: bold;
-    font-size: 15px;
+    font-size: $large-font-size-15;
 
     .prod_errortext {
         margin-right: 5px;
 
-        color: #ff2812;
+        color: $neutral-330;
     }
 
     .redArrow {
@@ -79,7 +79,7 @@
 
         width: 30%;
         height: 35px;
-        margin-top: 10px;
+        margin-top: $unit - 2;
         padding: 0 5px 0 5px;
 
         font-family: verdana;
@@ -91,31 +91,31 @@
             display: inline-block;
             width: 100%;
             height: 100%;
-            border: 1px solid #ccc;
+            border: 1px solid $neutral-50;
 
             color: $neutral-240;
         }
 
         a.ref2Selected {
-            border: 1px solid #f60;
+            border: 1px solid $neutral-470;
 
-            background-color: #ff8413;
+            background-color: $neutral-480;
 
             color: $white;
         }
 
         a.ref2NActive {
-            border: 1px solid #ccc;
+            border: 1px solid $neutral-50;
 
-            color: #ccc;
+            color: $neutral-50;
         }
 
         a.refNotAvailable {
-            border: 1px solid #ccc;
+            border: 1px solid $neutral-50;
 
-            background-color: #eee88c !important;
+            background-color: $neutral-500 !important;
 
-            color: #600 !important;
+            color: $neutral-490 !important;
         }
     }
 }
@@ -148,10 +148,10 @@
 [class="ref2QIOnSale"],
 [class="ref2QISwatch"] {
     display: inline-block;
-    margin-right: 6px;
+    margin-right: $unit/2;
     margin-bottom: 8px;
 }
 
 [class="prodSelectRefCon"] {
-    padding: 0 12px;
+    padding: 0 $unit;
 }

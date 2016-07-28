@@ -5,27 +5,27 @@
 
     color: $neutral-280;
     font-weight: bold;
-    font-size: 10px;
+    font-size: $smallest-font-size;
     text-align: center;
 }
 
 .c-product-item-id {
-    margin-bottom: 8px;
+    margin-bottom: $sub-unit + 2;
     padding: $sub-unit;
     padding-top: 2px;
 
     color: $neutral-290;
     font-family: verdana;
     font-size: $smaller-font-size;
-    text-shadow: 0 1px #eae7e7;
+    text-shadow: 0 1px $neutral-510;
 }
 
 .prod_select_title {
-    padding-right: 6px;
+    padding-right: $sub-unit;
 
     color: $neutral-290;
     font-weight: bold;
-    font-size: 15px;
+    font-size: $large-font-size-15;
 }
 
 .mSizeChart {
@@ -33,9 +33,9 @@
 
     margin: 10px 0 0 0 !important;
     a {
-        color: #ff8413 !important;
+        color: $neutral-480 !important;
         font-family: verdana;
         font-weight: bold;
-        font-size: 11px;
+        font-size: $font-size-small-11;
     }
 }

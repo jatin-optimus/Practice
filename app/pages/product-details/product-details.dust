@@ -3,14 +3,23 @@
 {<contentBlock}
     <div class="t-product-details-page">
         <div class="c-product-title">{title}</div>
+
         <div class="c-overallRating">
             {overallRating}
         </div>
-        <div class="c-product-item-id u-clear-both">{productId}</div>
+
+        <div class="c-product-item-id u-clear-both">
+            {productId}
+        </div>
+
         <div class="t-product-layout">
             <div id="content" class="container_nh">
-                <div class="prod_container c-main-container">{imageSection}</div>
+                <div class="prod_container c-main-container">
+                    {imageSection}
+                </div>
+
                 <div class="c-zoom-icon">{@translate key="zoom"/}</div>
+
                 <div class="c-price">
                    {priceSection}
                </div>
@@ -40,8 +49,10 @@
 
                 <div class="t-product-details__suggested-products c-you-may-also-like js-suggested-products  u-padding-top u--tight">
 
-                <div class="c-you-may-like-section">
-                    {youMayLikeCarousel}
+                    <div class="c-you-may-like-section">
+                        {youMayLikeCarousel}
+                    </div>
+
                 </div>
 
                 {#magnifikImage}
@@ -50,8 +61,10 @@
 
             </div>
 
-            </div>
+        </div>
+
     </div>
+
     <a class="c-temp-review-pagination-anchor" hidden></a>
 
     {>"components/sheet/sheet" effect="modalCenter" class="js-added-to-cart-pinny" headerClass="u-border-bottom-light-grey" bodyClass="js-added-to-cart-pinny__body c-added-to-cart-pinny__body" coverage="100%"  isHeader="true"/}
